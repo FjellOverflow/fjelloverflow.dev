@@ -3,34 +3,12 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
-
-This theme is aimed to be accessible out of the box. Light and dark mode are supported by
-default and additional color schemes can also be configured.
-
-This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. So, see the documentation for more info.
+I'm a full-stack web developer with a passion for [Vue.js](https://vuejs.org/) and its ecosystem. My other interests include _software development_, _Linux_, _free and open-source software_, _online privacy_, _Docker_, and _self-hosting_. On this blog, I want to share experiences, ideas, and discoveries around web and technology.
 
 <div>
-  <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
+  <img src="/assets/logo.svg" class="w-1/4 mx-auto" alt="fjelloverflow logo">
 </div>
 
-## Tech Stack
+The name _FjellOverflow_ is a creative blend of the Norwegian word _Fjell_ (meaning mountain) and _Overflow_. It's a playful nod to the common computer science issue, the _stack overflow_, where a program runs out of memory due to errors. The name draws inspiration from the virtual _mountain_ of a stack, reflecting in the mountain-themed logo.
 
-This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
-
-## Features
-
-Here are certain features of this site.
-
-- fully responsive and accessible
-- SEO-friendly
-- light & dark mode
-- fuzzy search
-- super fast performance
-- draft posts
-- pagination
-- sitemap & rss feed
-- highly customizable
-
-If you like this theme, you can star/contribute to the [repo](https://github.com/satnaing/astro-paper).  
-Or you can even give any feedback via my [email](mailto:contact@satnaing.dev).
+This website is based on the [AstroPaper](https://github.com/satnaing/astro-paper) theme by [SatNaing](https://satnaing.dev/), built with [Astro](https://astro.build/).
