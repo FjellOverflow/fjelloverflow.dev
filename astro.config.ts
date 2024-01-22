@@ -27,7 +27,10 @@ export default defineConfig({
       ],
     ],
     shikiConfig: {
-      theme: "one-dark-pro",
+      experimentalThemes: {
+        dark: "github-dark",
+        light: "github-light",
+      },
       wrap: true,
     },
   },
