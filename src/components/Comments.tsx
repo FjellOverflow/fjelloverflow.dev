@@ -1,4 +1,4 @@
-import Giscus, { type GiscusProps, type Theme } from "@giscus/react";
+import Giscus, { type Theme } from "@giscus/react";
 import { GISCUS } from "@config";
 import { useState } from "react";
 
