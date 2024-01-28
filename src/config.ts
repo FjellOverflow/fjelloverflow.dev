@@ -159,4 +159,10 @@ export const SOCIALS: SocialObjects = [
     linkTitle: `${SITE.title} on Mastodon`,
     active: false,
   },
+  {
+    name: "Exercism",
+    href: "https://exercism.org/profiles/FjellOverflow",
+    linkTitle: `${SITE.title} on Exercism`,
+    active: true,
+  },
 ];
