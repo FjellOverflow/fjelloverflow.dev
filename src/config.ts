@@ -26,7 +26,7 @@ export const LOGO_IMAGE = {
 
 export const GISCUS: GiscusProps = {
   id: "comments",
-  repo: "FjellOverflow/blog",
+  repo: "FjellOverflow/fjelloverflow.dev",
   repoId: "R_kgDOLFslYw",
   category: "Giscus comments",
   categoryId: "DIC_kwDOLFslY84Ccm0m",
