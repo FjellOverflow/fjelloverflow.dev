@@ -1,6 +1,6 @@
 ---
 author: FjellOverflow
-pubDatetime: 2024-02-04T9:48:00.000Z
+pubDatetime: 2024-02-04T09:48:00.000Z
 modDatetime:
 title: Automount encrypted drives on Linux
 ogImage: /src/assets/posts/how-to-automount-luks.jpg
