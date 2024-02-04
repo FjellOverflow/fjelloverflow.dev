@@ -73,7 +73,7 @@ sudo cryptsetup luksOpen UUID="$DEVICE_UUID" "$DEVICE_NAME" --key-file "$KEY_PAT
 sudo mount "$DEVICE_NAME" "$MOUNTPOINT"
 ```
 
-## Decrypt & mount on boot
+## Decrypt at boot
 
 To automate the process just performed manually, add an entry to `/etc/crypttab` specifying the device name and key-file for the given UUID. This replicates the manual setup from the previous step, but during boot.
 
