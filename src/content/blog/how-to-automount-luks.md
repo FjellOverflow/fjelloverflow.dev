@@ -92,3 +92,6 @@ echo /dev/mapper/$DEVICE_NAME $MOUNTPOINT ext4 defaults 0 2 | sudo tee -a /etc/f
 ```
 
 Upon boot, the encrypted and mapped partition will be automatically mounted at the specified location. Your setup is now complete!
+
+## A note on security
+Having an encryption key stored on the device could potentially render the encryption ineffective; an attacker might simply extract the key from your device and employ it to decrypt the encrypted partition. The solution to this issue (or rather the only scenario where this configuration is reasonable) involves encrypting the device or partition where the key is located, which circles us back to the initial problem of my home server rebooting and demanding a user input password. However, in my specific use case, the necessity for an encrypted partition isn't absolute; rather, encryption happens to be enabled and removing it is a complex and time-consuming task. Instead of eliminating the encryption, I have chosen the aforementioned approach. This approach also grants me the option to delete the key or remove it from the encrypted partition to restore the security that LUKS provides for my drive.
