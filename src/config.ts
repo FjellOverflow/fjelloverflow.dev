@@ -2,7 +2,7 @@ import type { GiscusProps } from "@giscus/react";
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://fjelloverflow.dev",
+  website: "https://fjelloverflow.dev/",
   author: "FjellOverflow",
   desc: "Personal website for FjellOverflow.",
   title: "FjellOverflow",
