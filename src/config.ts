@@ -1,3 +1,4 @@
+import type { GiscusProps } from "@giscus/react";
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
@@ -21,6 +22,20 @@ export const LOGO_IMAGE = {
   svg: true,
   width: 216,
   height: 46,
+};
+
+export const GISCUS: GiscusProps = {
+  id: "comments",
+  repo: "FjellOverflow/fjelloverflow.dev",
+  repoId: "R_kgDOLFslYw",
+  category: "Giscus comments",
+  categoryId: "DIC_kwDOLFslY84Ccm0m",
+  mapping: "pathname",
+  reactionsEnabled: "0",
+  emitMetadata: "0",
+  inputPosition: "bottom",
+  lang: "en",
+  loading: "lazy",
 };
 
 export const SOCIALS: SocialObjects = [
