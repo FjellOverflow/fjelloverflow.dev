@@ -28,7 +28,7 @@ In the realm of encryption, this concept involves encrypting data while convinci
 
 ## Deniable encryption
 
-The challenge that [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption) addresses is that while encryption may effectively safeguard sensitive data, relying on a key known only to the human keyholder, this individual represents a vulnerable point that can be compromised. Simply put, an attacker that cannot break the encryption [may instead target the keyholder](https://xkcd.com/538/). However, with deniable encryption, where the keyholder can plausibly deny the existence of certain encrypted data or provide a decoy key of no value, the security chain is reinforced.
+The challenge that [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption) addresses is that while encryption may effectively protect sensitive data, relying on a key known only to the human keyholder, this individual represents a vulnerable point that can be compromised. Simply put, an attacker that cannot break the encryption [may instead target the keyholder](https://xkcd.com/538/). However, with deniable encryption, where the keyholder can plausibly deny the existence of certain encrypted data or provide a decoy key of no value, the security chain is reinforced.
 
 To illustrate, consider a fictional, yet still imaginable, scenario involving a journalist criticizing an autocratic regime. In an effort to protect a whistleblower, the journalist encrypts a USB stick containing identifying information. If the regime discovers and confiscates the USB drive, they may suspect sensitive data and resort to threats of sanctions, imprisonment or even torture to coerce the journalist into revealing the encryption key. This is where deniable encryption could prove invaluable.
 
@@ -48,7 +48,7 @@ The significant advantage of randomness is also its weakness: in a hypothetical 
 
 ## Destroying encryption keys
 
-An alternative method to safeguard encrypted data involves [destroying the encryption key](https://en.wikipedia.org/wiki/Crypto-shredding). This could entail maintaining a lengthy and impossible-to-remember key within a file or physically on a piece of paper. When threatened to disclose the key, the keyholder could openly or publicly shred this document, rendering the key forever inaccessible and the encryption impenetrable.
+An alternative method to secure encrypted data involves [destroying the encryption key](https://en.wikipedia.org/wiki/Crypto-shredding). This could entail maintaining a lengthy and impossible-to-remember key within a file or physically on a piece of paper. When threatened to disclose the key, the keyholder could openly or publicly shred this document, rendering the key forever inaccessible and the encryption impenetrable.
 
 Compared to deniable encryption, this approach offers the advantage that the keyholder can provide proof of lacking access to the data. For an attacker, compelling the keyholder to reveal the key becomes futile since the key has been irreversibly destroyed, eliminating the risk of the attacker trying to reveal more and more encrypted containers, withouth them even existing.
 
@@ -56,7 +56,7 @@ However, this strategy may still pose risks for the keyholder, primarily due to 
 
 ## The problematic _Key Disclosure Law_
 
-In many countries, including most EU-states, suspects being criminally investigated by the police have the [right to remain silent](https://en.wikipedia.org/wiki/Right_to_silence#Worldwide), safeguarding them from self-incrimination. Even if evidence indicates that a suspect posseses certain information, they cannot be directly penalized for refusing to disclose it.
+In many countries, including most EU-states, suspects being criminally investigated by the police have the [right to remain silent](https://en.wikipedia.org/wiki/Right_to_silence#Worldwide), saving them from self-incrimination. Even if evidence indicates that a suspect posseses certain information, they cannot be directly penalized for refusing to disclose it.
 
 However, an intriguing complication arises, when the information in question is stored on an _encrypted_ device. Common sense suggests that a suspect should be permitted to withhold the encryption key, exercising their right to remain silent and avoid self-incrimination. While some countries uphold this principle, others, such as the UK, France or Australia, have enacted some form of [Key Disclosure Law](https://en.wikipedia.org/wiki/Key_disclosure_law), compelling individuals to reveal passwords under [penalties up to imprisonment](https://www.vice.com/en/article/wnjgdq/how-refusing-to-hand-over-your-passwords-can-land-you-in-jail) for refusal. This law, contentious in itself, takes on an even more troubling dimension when considered alongside the concept of deniable encryption.
 
@@ -70,7 +70,7 @@ Encryption stands as a crucial, potent, and indispensable tool in today's digita
 
 The notion that the mere existence of encryption could be punishable is deeply concerning. Are individuals automatically under suspicion simply because encryption technology exists? This raises doubts about the understanding of modern technology and computer security among politicians and lawmakers. Alternatively, it suggests a more disturbing trend of invasive practices by certain agencies and authorities.
 
-In my view, the right to refuse to disclose passwords should be safeguarded in modern democracies. Countries like the UK and France appear to be traversing a dangerous path toward digital authoritarianism, where individual freedoms are increasingly compromised. It's essential that legislation keeps in touch with technological advancements and ensures that our fundamental rights and liberties remain protected in this digital age.
+In my view, the right to refuse to disclose passwords should be protected in modern democracies. Countries like the UK and France appear to be traversing a dangerous path toward digital authoritarianism, where individual freedoms are increasingly compromised. It's essential that legislation keeps in touch with technological advancements and ensures that our fundamental rights and liberties remain protected in this digital age.
 
 ## List of linked references
 

@@ -7,6 +7,7 @@ ogImage: /src/assets/posts/how-to-automount-luks.jpg
 tags:
   - tutorial
   - linux
+  - encryption
 description: How to mount LUKS encrypted partitions on boot on Linux
 ---
 
