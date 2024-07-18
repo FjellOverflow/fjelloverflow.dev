@@ -20,5 +20,5 @@ content:
         label: Title
         type: text
       - name: pubDatetime
-        label: Published at
+        label: Published
         type: date
