@@ -15,3 +15,10 @@ content:
         search: ''
         sort: title
         order: desc
+    fields:
+      - name: title
+        label: Title
+        type: text
+      - name: pubDatetime
+        label: Published at
+        type: date
