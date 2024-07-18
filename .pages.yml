@@ -7,3 +7,11 @@ content:
     label: Posts
     path: src/content/blog
     type: collection
+    view:
+      fields: [ title ]
+      primary: title
+      sort: [ date, title ]
+      default:
+        search: ''
+        sort: title
+        order: desc
