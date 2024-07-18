@@ -3,8 +3,6 @@ content:
     label: Posts
     path: src/content/blog
     type: collection
-    view:
-      fields: [ tags ]
     fields:
       - name: tags
         type: text
