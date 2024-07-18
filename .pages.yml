@@ -10,7 +10,7 @@ content:
     view:
       fields: [ title ]
       primary: title
-      sort: [ date, title ]
+      sort: [ pubDatetime, title ]
       default:
         search: ''
         sort: title
@@ -20,5 +20,5 @@ content:
         label: Title
         type: text
       - name: pubDatetime
-        label: Published
+        label: Published at
         type: date
