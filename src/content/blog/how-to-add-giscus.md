@@ -9,9 +9,9 @@ tags:
 description: User comments on a static blog hosted on GitHub Pages with Giscus
 ---
 
-_If you want to skip the walk-through and see how I implemented in on this blog, check out [the commit](https://github.com/FjellOverflow/blog/commit/8293f39873610341ce39d3d8fb483cbbb48c5f84)_.
+_If you want to skip the walk-through and see how I implemented it on this blog, check out [the commit](https://github.com/FjellOverflow/blog/commit/8293f39873610341ce39d3d8fb483cbbb48c5f84)_.
 
-Hosting a thin static blog on a platform like [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) has numerous advantages, but it diminishes client-side interactivity. Fortunately, [Giscus](https://giscus.app/) exists and offers a way to embed user comments on static sites.
+Hosting a thin static blog on a platform like [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) has numerous advantages but also takes away some interactivity. Fortunately, [Giscus](https://giscus.app/) exists and offers a way to embed user comments on static sites.
 
 ## Table of contents
 
@@ -19,9 +19,9 @@ Hosting a thin static blog on a platform like [GitHub Pages](https://docs.github
 
 [Giscus uses the GitHub API](https://github.com/giscus/giscus?tab=readme-ov-file#how-it-works) to read and store comments made by _GitHub_ users in the `Discussions` associated with a repository.
 
-Embed the _Giscus_ client-side script bundle on your site, configure it with the correct repository URL, and users can view and write comments (when logged into _GitHub_)
+Embed the _Giscus_ client-side script bundle on your site, configure it with the correct repository URL, and users can view and write comments (when logged into _GitHub_).
 
-The approach is basically serverless, as the comments are stored on _GitHub_ and dynamically loaded from there on client side.
+The approach is serverless, as the comments are stored on _GitHub_ and dynamically loaded from there on the client side, hence perfect for a static blog.
 
 ## Setting up _Giscus_
 
@@ -41,16 +41,16 @@ If any of these conditions cannot be fulfilled for any reason, unfortunately, _G
 
 Next, configuring _Giscus_ is necessary. In most cases, the preselected defaults are suitable, and you should only modify them if you have a specific reason and know what you are doing. Don't worry too much about making the wrong choices; you can always adjust the configuration later on.
 
-However you need to
+However, you need to
 
 - select the right language for the UI
-- specify the _GitHub_ repository you want to connect,typically the repository containing a static site hosted on _GitHub Pages_
+- specify the _GitHub_ repository you want to connect, typically the repository containing your statically hosted site on _GitHub Pages_
 - create and set an `Announcement` type discussion on _GitHub_ if you want to ensure nobody can create random comments directly on _GitHub_
 - define the color scheme
 
 After configuring the settings, _Giscus_ provides you with a generated `<script>` tag, which you will need in the next steps.
 
-## Client-side code
+## Simple script tag
 
 You should now have a script tag that looks like this:
 
@@ -73,7 +73,7 @@ You should now have a script tag that looks like this:
 ></script>
 ```
 
-Simply add that to the source code of your site. For instance, if you're using [AstroPaper](https://github.com/satnaing/astro-paper) (the theme of this blog) and want to add comments to your posts, navigate to `src/layouts/PostDetails.astro` and paste it into the desired location where you want the comments to appear.
+Simply add that to the source code of the site. For instance, if you're using _AstroPaper_ and want to enable comments on posts, navigate to `src/layouts/PostDetails.astro` and paste it into the desired location where you want the comments to appear, perhaps underneath the `Share this post on:` buttons.
 
 ```diff
       <ShareLinks />
@@ -84,15 +84,7 @@ Simply add that to the source code of your site. For instance, if you're using [
 +        data-repo-id="[ENTER REPO ID HERE]"
 +        data-category="[ENTER CATEGORY NAME HERE]"
 +        data-category-id="[ENTER CATEGORY ID HERE]"
-+        data-mapping="pathname"
-+        data-strict="0"
-+        data-reactions-enabled="1"
-+        data-emit-metadata="0"
-+        data-input-position="bottom"
-+        data-theme="preferred_color_scheme"
-+        data-lang="en"
-+        crossorigin="anonymous"
-+        async>
++        ...
 +    </script>
 
   </main>
@@ -100,11 +92,11 @@ Simply add that to the source code of your site. For instance, if you're using [
 </Layout>
 ```
 
-And it's done! You have successfully integrated comments on the blog!
+And it's done! You have successfully integrated comments on your site!
 
-## Dynamic light/dark theme
+## React component with light/dark theme
 
-The embedded script tag in the layout is quite static, with the _Giscus_ configuration, including `theme`, hardcoded into the layout. Given that this blog features a light/dark theme toggle, I aimed for the comments to seamlessly transition between light and dark themes along with the rest of the site. To achieve this, a more sophisticated approach to embedding _Giscus_ is required.
+The embedded script tag in the layout is quite static, with the _Giscus_ configuration, including `theme`, hardcoded into the layout. Given that _AstroPaper_ features a light/dark theme toggle, it would be nice for the comments to seamlessly transition between light and dark themes along with the rest of the site. To achieve this, a more sophisticated approach to embedding _Giscus_ is required.
 
 Firstly, we are going to install the [React component](https://www.npmjs.com/package/@giscus/react) for _Giscus_:
 
@@ -112,14 +104,14 @@ Firstly, we are going to install the [React component](https://www.npmjs.com/pac
 npm i @giscus/react
 ```
 
-Then we create a new React component under `src/components`:
+Then we create a new `Comments.tsx` React component in `src/components`:
 
 ```tsx
 import Giscus, { type Theme } from "@giscus/react";
 import { GISCUS } from "@config";
 import { useEffect, useState } from "react";
 
-interface Props {
+interface CommentsProps {
   lightTheme?: Theme;
   darkTheme?: Theme;
 }
@@ -127,13 +119,14 @@ interface Props {
 export default function Comments({
   lightTheme = "light",
   darkTheme = "dark",
-}: Props) {
+}: CommentsProps) {
   const [theme, setTheme] = useState(() => {
     const currentTheme = localStorage.getItem("theme");
     const browserTheme = window.matchMedia("(prefers-color-scheme: dark)")
       .matches
       ? "dark"
       : "light";
+
     return currentTheme || browserTheme;
   });
 
@@ -167,13 +160,15 @@ export default function Comments({
 }
 ```
 
-_EDIT (11.3.24): Thanks to [benjaminrae](https://github.com/benjaminrae) for the tip on the proper usage of `useEffect` hooks._
+This _React_ component not only wraps the native _Giscus_ component but also introduces additional props, namely `lightTheme` and `darkTheme`. Leveraging two event listeners, the _Giscus_ comments will align with the site's theme, dynamically switching between dark and light themes whenever the site or browser theme is changed.
 
-This _React_ component not only encompasses the _Giscus_ comments functionality but also introduces additional props, namely `lightTheme` and `darkTheme`. Leveraging two event listeners, the _Giscus_ comments will align with the site's theme, dynamically switching between dark and light themes whenever the site or browser theme is changed.
-
-To define this `GISCUS` config, the optimal location is in `src/config.ts`:
+We also need to define the `GISCUS` config, for which the optimal location is in `src/config.ts`:
 
 ```ts
+import type { GiscusProps } from "@giscus/react";
+
+...
+
 export const GISCUS: GiscusProps = {
   repo: "[ENTER REPO HERE]",
   repoId: "[ENTER REPO ID HERE]",
@@ -190,7 +185,7 @@ export const GISCUS: GiscusProps = {
 
 Note that specifying a `theme` here will override the `lightTheme` and `darkTheme` props, resulting in a static theme setting, similar to the previous approach of embedding _Giscus_ with the `<script>` tag.
 
-To complete the process, add the new Comments component to `src/layouts/PostDetails.astro`!
+To complete the process, add the new Comments component to `src/layouts/PostDetails.astro` (replacing the `script` tag from the previous step).
 
 ```diff
       <ShareLinks />
@@ -203,4 +198,4 @@ To complete the process, add the new Comments component to `src/layouts/PostDeta
 </Layout>
 ```
 
-Feel free to test it out on this site: toggling the theme in the header bar should also switch the comments theme accordingly. If you found this tutorial helpful, don't hesitate to leave a comment!
+And that's it!
