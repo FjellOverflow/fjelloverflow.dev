@@ -22,7 +22,7 @@ Recently, I faced a situation where connecting an encrypted partition to my home
 As we make use of [cryptsetup](https://gitlab.com/cryptsetup/cryptsetup), we need to install it first.
 
 ```bash
-# on Debian based distributions
+# on Debian-based distributions
 sudo apt install cryptsetup
 
 # for other distributions, check documentation
@@ -47,7 +47,7 @@ MOUNTPOINT="/encrypted"
 
 ## Creating a decryption key
 
-As we cannot enter the decryption password on-site and also do not want to store a (cleartext) password on the machine, we will create a key.
+As we cannot enter the decryption password on site and also do not want to store a (cleartext) password on the machine, we will create a key.
 
 ```bash
 dd if=/dev/urandom of="$KEY_PATH" bs=1024 count=4
@@ -96,4 +96,4 @@ Upon boot, the encrypted and mapped partition will be automatically mounted at t
 
 ## A note on security
 
-Having an encryption key stored on the device could potentially render the encryption ineffective; an attacker might simply extract the key from your device and employ it to decrypt the encrypted partition. The solution to this issue (or rather the only scenario where this configuration is reasonable) involves encrypting the device or partition where the key is located, which circles us back to the initial problem of my home server rebooting and demanding a user input password. However, in my specific use case, the necessity for an encrypted partition isn't absolute; rather, encryption happens to be enabled and removing it is a complex and time-consuming task. Instead of eliminating the encryption, I have chosen the aforementioned approach. This approach also grants me the option to delete the key or remove it from the encrypted partition to restore the security that LUKS provides for my drive.
+Having an encryption key stored on the device could potentially render the encryption ineffective; an attacker might simply extract the key from your device and employ it to decrypt the encrypted partition. The solution to this issue (or rather the only scenario where this configuration is reasonable) involves encrypting the device or partition where the key is located, which circles us back to the initial problem of my home server rebooting and demanding a user input password. However, in my specific use case, the necessity for an encrypted partition isn't absolute; rather, encryption happens to be enabled, and removing it is a complex and time-consuming task. Instead of eliminating the encryption, I have chosen the aforementioned approach. This approach also grants me the option to delete the key or remove it from the encrypted partition to restore the security that LUKS provides for my drive.
