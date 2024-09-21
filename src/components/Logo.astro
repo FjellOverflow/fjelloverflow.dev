@@ -1,0 +1,94 @@
+<svg class="h-[90px] w-[90px] ml-20" style="overflow: visible;">
+  <path
+    id="outline-1"
+    class="animated-path"
+    d="m 9.4826134,201.84237 24.9391986,-60.41712 9.740773,0.2859 41.186269,-98.932177 41.107096,98.142107 24.85777,-57.879935 51.10991,118.294255 -50.36791,-1.19881 -32.49094,20.84809 z"
+  ></path>
+  <path
+    id="outline-2"
+    class="animated-path"
+    d="m 9.4826134,201.84237 24.9391986,-60.41712 9.740773,0.2859 41.186269,-98.932177 41.107096,98.142107 25.59977,59.21551 -32.49094,20.84809 z"
+  ></path>
+  <path
+    id="outline-3"
+    class="animated-path"
+    d="m 9.4826134,201.84237 24.9391986,-60.41712 9.740773,0.2859 41.186269,-98.932177 1.738621,104.015797 25.715465,22.8551 39.25278,30.48672 -32.49094,20.84809 z"
+  ></path>
+  <path
+    id="outline-4"
+    class="animated-path"
+    d="m 9.4826134,201.84237 24.9391986,-60.41712 9.740773,0.2859 41.186269,-98.932177 1.738621,104.015797 25.715465,22.8551 6.76184,51.33481 z"
+  ></path>
+  <path
+    id="outline-5"
+    class="animated-path"
+    d="m 9.4826134,201.84237 24.9391986,-60.41712 9.740773,0.2859 41.186269,-98.932177 41.107096,98.142107 8.18651,-19.06184 17.75415,19.82542 9.18662,58.67869 -9.52751,-0.22676 -32.49094,20.84809 z"
+  ></path>
+  <path
+    id="outline-6"
+    class="animated-path"
+    d="m 9.4826134,201.84237 24.9391986,-60.41712 9.740773,0.2859 41.186269,-98.932177 41.107096,98.142107 24.85777,-57.879935 17.7251,41.024885 -16.64221,17.61863 9.18662,58.67869 -9.52751,-0.22676 -32.49094,20.84809 z"
+  ></path>
+  <path
+    id="outline-7"
+    class="animated-path"
+    d="m 9.4826134,201.84237 24.9391986,-60.41712 9.740773,0.2859 16.212223,-38.94285 24.417186,1.45617 17.693556,-20.532095 23.9704,57.228705 24.85777,-57.879935 51.10991,118.294255 -50.36791,-1.19881 -32.49094,20.84809 z"
+  ></path>
+</svg>
+<div class="h-[200px] w-[200px] ml-20 mt-6 logo-background"></div>
+
+<style>
+  #outline-1 {
+    --stroke-len: 682;
+  }
+
+  #outline-2 {
+    --stroke-len: 682;
+  }
+
+  #outline-3 {
+    --stroke-len: 520;
+  }
+
+  #outline-4 {
+    --stroke-len: 484;
+  }
+
+  #outline-5 {
+    --stroke-len: 555;
+  }
+
+  #outline-6 {
+    --stroke-len: 639;
+  }
+
+  #outline-7 {
+    --stroke-len: 623;
+  }
+
+  .animated-path {
+    fill: none;
+    stroke: rgba(var(--color-accent), 0.4);
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: var(--stroke-len);
+    stroke-dashoffset: var(--stroke-len);
+    animation: dash 5s linear alternate infinite;
+  }
+
+  @keyframes dash {
+    from {
+      stroke-dashoffset: var(--stroke-len);
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .logo-background {
+    background-image: linear-gradient(-45deg, #7fc5d974 50%, #47cbff85 50%);
+    filter: blur(44px);
+    position: absolute;
+  }
+</style>
