@@ -2,6 +2,7 @@
 author: FjellOverflow
 pubDatetime: 2024-09-14T16:03:00.000Z
 title: Updating Docker containers
+ogImage: /src/assets/posts/update-docker-containers.jpg
 tags:
   - tutorial
   - docker
@@ -9,6 +10,8 @@ description: Different strategies to keep your dockerized applications up-to-dat
 ---
 
 In the realm of self-hosting, it is very common to run containerized applications rather than bare-metal installs. But how can we keep applications on their latest versions? Automated or manually? This post will highlight some different strategies!
+
+![Updating Docker containers](@assets/posts/update-docker-containers.jpg)
 
 ## Table of contents
 

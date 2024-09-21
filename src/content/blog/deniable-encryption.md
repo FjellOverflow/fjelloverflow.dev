@@ -12,6 +12,8 @@ description: A critical look at encryption under the threat of key disclosure la
 
 Encryption is both useful and vital in the digital age; however, it also presents challenges and can give rise to problematic dilemmas. Here, I want to take a deeper look at the concept of so-called _Deniable Encryption_.
 
+![Deniable Encryption](@assets/posts/deniable-encryption.jpg)
+
 ## Table of contents
 
 ## Encryption

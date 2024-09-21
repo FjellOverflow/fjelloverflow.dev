@@ -13,6 +13,8 @@ _If you want to skip the walk-through and see how I implemented it on this blog,
 
 Hosting a thin static blog on a platform like [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) has numerous advantages but also takes away some interactivity. Fortunately, [Giscus](https://giscus.app/) exists and offers a way to embed user comments on static sites.
 
+![How to add Giscus comments to AstroPaper](@assets/posts/how-to-add-giscus.jpg)
+
 ## Table of contents
 
 ## How _Giscus_ works
