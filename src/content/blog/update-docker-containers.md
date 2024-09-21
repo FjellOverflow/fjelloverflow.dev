@@ -2,7 +2,7 @@
 author: FjellOverflow
 pubDatetime: 2024-09-14T16:03:00.000Z
 title: Updating Docker containers
-ogImage:../../assets/posts/update-docker-containers.jpg
+ogImage: ../../assets/posts/update-docker-containers.jpg
 tags:
   - tutorial
   - docker
