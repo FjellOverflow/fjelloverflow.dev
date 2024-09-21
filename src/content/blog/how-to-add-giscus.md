@@ -3,7 +3,7 @@ author: FjellOverflow
 pubDatetime: 2024-01-25T18:06:00.000Z
 modDatetime:
 title: How to add Giscus comments to AstroPaper
-ogImage: ../../assets/posts/how-to-add-giscus.jpg
+ogImage: /assets/posts/how-to-add-giscus.jpg
 tags:
   - tutorial
 description: User comments on a static blog hosted on GitHub Pages with Giscus
@@ -13,7 +13,7 @@ _If you want to skip the walk-through and see how I implemented it on this blog,
 
 Hosting a thin static blog on a platform like [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) has numerous advantages but also takes away some interactivity. Fortunately, [Giscus](https://giscus.app/) exists and offers a way to embed user comments on static sites.
 
-![How to add Giscus comments to AstroPaper](@assets/posts/how-to-add-giscus.jpg)
+![How to add Giscus comments to AstroPaper](/assets/posts/how-to-add-giscus.jpg)
 
 ## Table of contents
 

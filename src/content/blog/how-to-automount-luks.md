@@ -3,7 +3,7 @@ author: FjellOverflow
 pubDatetime: 2024-02-04T09:48:00.000Z
 modDatetime:
 title: Automount encrypted drives on Linux
-ogImage: ../../assets/posts/how-to-automount-luks.jpg
+ogImage: /assets/posts/how-to-automount-luks.jpg
 tags:
   - tutorial
   - linux
@@ -15,7 +15,7 @@ _The tutorial assumes you already have a [LUKS](https://en.wikipedia.org/wiki/Li
 
 Recently, I faced a situation where connecting an encrypted partition to my home server became a challenge. Since the server occasionally reboots on its own, being physically present to decrypt and mount the drive isn't always possible. I needed an automated solution, which turned out to be quite straightforward.
 
-![Automount encrypted drives on Linux](@assets/posts/how-to-automount-luks.jpg)
+![Automount encrypted drives on Linux](/assets/posts/how-to-automount-luks.jpg)
 
 ## Table of contents
 

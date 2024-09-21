@@ -3,7 +3,7 @@ author: FjellOverflow
 pubDatetime: 2022-11-01T20:00:00.000Z
 modDatetime: 2024-04-02T16:18:00.000Z
 title: Deniable Encryption
-ogImage: ../../assets/posts/deniable-encryption.jpg
+ogImage: /assets/posts/deniable-encryption.jpg
 tags:
   - privacy
   - encryption
@@ -12,7 +12,7 @@ description: A critical look at encryption under the threat of key disclosure la
 
 Encryption is both useful and vital in the digital age; however, it also presents challenges and can give rise to problematic dilemmas. Here, I want to take a deeper look at the concept of so-called _Deniable Encryption_.
 
-![Deniable Encryption](@assets/posts/deniable-encryption.jpg)
+![Deniable Encryption](/assets/posts/deniable-encryption.jpg)
 
 ## Table of contents
 
