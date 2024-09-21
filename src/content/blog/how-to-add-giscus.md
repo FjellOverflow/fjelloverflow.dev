@@ -3,7 +3,7 @@ author: FjellOverflow
 pubDatetime: 2024-01-25T18:06:00.000Z
 modDatetime:
 title: How to add Giscus comments to AstroPaper
-ogImage: /src/assets/posts/how-to-add-giscus.jpg
+ogImage: ../../assets/posts/how-to-add-giscus.jpg
 tags:
   - tutorial
 description: User comments on a static blog hosted on GitHub Pages with Giscus
