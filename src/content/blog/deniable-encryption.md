@@ -3,7 +3,7 @@ author: FjellOverflow
 pubDatetime: 2022-11-01T20:00:00.000Z
 modDatetime: 2024-04-02T16:18:00.000Z
 title: Deniable Encryption
-ogImage: /src/assets/posts/deniable-encryption.jpg
+ogImage: ../../assets/posts/deniable-encryption.jpg
 tags:
   - privacy
   - encryption
