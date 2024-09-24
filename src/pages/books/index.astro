@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import { SITE } from "@config";
+
+const lists = (await getCollection("bookLists"))
+.toSorted((l1, l2) => l2.slug.localeCompare(l1.slug));
+---
+
+<Layout title={`Books | ${SITE.title}`}>
+  <Header activeNav="books" />
+  <Main pageTitle="Books" pageDesc="All the books I've read in the last years.">
+    <ul class="ml-8" style="list-style:disc;">
+      {lists.map((list) =>
+         <li class="my-6">
+      <a
+        href={list.slug}
+        class="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+      >
+        <h3 class="text-lg font-medium decoration-dashed hover:underline">{list.data.title}</h3>
+      </a>
+      <p>{list.data.description}</p>
+    </li>
+        )}
+    </ul>
+  </Main>
+  <Footer />
+</Layout>
