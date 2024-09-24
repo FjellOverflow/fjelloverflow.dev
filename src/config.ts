@@ -165,4 +165,16 @@ export const SOCIALS: SocialObjects = [
     linkTitle: `${SITE.title} on Exercism`,
     active: true,
   },
+  {
+    name: "Pixelfed",
+    href: "https://pixelfed.social/FjellOverflow",
+    linkTitle: `${SITE.title} on Pixelfed`,
+    active: true,
+  },
+  {
+    name: "Bookwyrm",
+    href: "https://bookwyrm.social/user/FjellOverflow",
+    linkTitle: `${SITE.title} on Bookwyrm`,
+    active: true,
+  },
 ];
