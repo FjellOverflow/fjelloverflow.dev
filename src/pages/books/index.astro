@@ -7,7 +7,8 @@ import Main from "@layouts/Main.astro";
 import { SITE } from "@config";
 
 const lists = (await getCollection("bookLists"))
-.toSorted((l1, l2) => l2.slug.localeCompare(l1.slug));
+
+lists.sort((l1, l2) => l2.slug.localeCompare(l1.slug));
 ---
 
 <Layout title={`Books | ${SITE.title}`}>
