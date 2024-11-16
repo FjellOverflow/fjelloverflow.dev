@@ -1,0 +1,33 @@
+---
+title: Announcing Nordlys, a minimal Astro theme
+description: Astro theme for your personal website, blog or project portfolio
+publishedDate: 2024-10-18
+previewImage: '@/assets/posts/announcing-nordlys.png'
+openGraphImage: '@/assets/posts/announcing-nordlys.png'
+tags:
+  - astro
+  - tailwindcss
+---
+
+I'm happy to announce the first release of Nordlys, a minimal Astro blog theme! Take a look at the repository on [Github](https://github.com/FjellOverflow/nordlys) or check out the preview at [nordlys.fjelloverflow.dev](https://nordlys.fjelloverflow.dev/).
+
+import PreviewImage from '@/assets/posts/announcing-nordlys.png'
+import { Image } from 'astro:assets'
+
+<Image src={PreviewImage} class="sm:w-2/3 w-4/5 my-0 mx-auto" data-img-embed alt="A computer monitor with chat bubbles floating around it" loading="eager"/>
+
+## About the Theme
+
+Somewhat unsatisfied with the available options, I decided to create my own Astro theme called _Nordlys_ (Norwegian for _Aurora_ or _Northern Lights_). The result is a minimal blog theme, ideal for a personal blog and showcasing a project portfolio. It is fully customizable and easily configurable, includes built-in color themes, code blocks with custom headers, and features both dark and light modes. Simple yet elegant, it looks good on both mobile and desktop devices, and it is quick to set up, allowing you to start writing content immediately!
+
+## Getting started
+
+Hop over to [FjellOverflow/nordlys](https://github.com/FjellOverflow/nordlys) on Github to clone or fork the repository. The _Readme_ already contains instructions on how to get started, but in essence, a quick `pnpm install` and `pnpm dev` are all that's needed! Configure the theme in `theme.config.ts` and write content simply by creating Markdown files. Detailed instructions and illustrative examples can be found on [nordlys.fjelloverflow.dev](https://nordlys.fjelloverflow.dev/posts/).
+
+## All Feedback is Welcome!
+
+If you are interested in or excited about this project, or if you have been looking for a fresh new look for your personal website, I would be grateful if you would give _Nordlys_ a try! At this moment, the project is very fresh, and every reported bug, feature suggestion, or other contribution is greatly appreciated!
+
+## Used Technologies
+
+Of course, the main framework used is [Astro](https://astro.build/), providing the perfect base for a statically rendered site. Styling is done with [TailwindCSS](https://tailwindcss.com/), and syntax-highlighting is provided out-of-the-box with [Shiki](https://shiki.style/), along with custom post-processing. Other notable mentions include the [IBM Plex Sans](https://fonts.google.com/specimen/IBM+Plex+Sans) font, [Tabler](https://tabler.io/icons) icons, and [Satori](https://github.com/vercel/satori) for automated generation of Open Graph images.
