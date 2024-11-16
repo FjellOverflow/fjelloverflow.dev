@@ -1,10 +1,15 @@
-<div align="center">
-    <a href="https://docs.fjellhei.men" target="blank">
-        <img src="https://raw.githubusercontent.com/FjellOverflow/fjelloverflow.dev/main/public/assets/logo.svg" alt="Fjellheimen logo" width="20%">
-        <h1 align="center">fjelloverflow.dev</h1>
-    </a>
-</div>
+<p align="center">
+  <a href="https://fjelloverflow.dev">
+    <img alt="logo" src="./public/favicon.svg" height="64">
+  </a>
+</p>
 
-[fjelloverflow.dev](https://fjelloverflow.dev) is my personal website/blog.
+<h1 align="center">
+  <a href="https://fjelloverflow.dev">fjelloverflow.dev</a>
+</h1>
 
-Forked from [satnaing/astro-paper](https://github.com/Satnaing/astro-paper).
+<p align="center">
+  Personal website and Blog.
+</p>
+
+A static website, built with Astro, hosted on Github Pages. Uses the [Nordlys](https://github.com/FjellOverflow/nordlys) Astro theme, created by myself.

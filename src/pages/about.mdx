@@ -1,0 +1,20 @@
+---
+layout: '@/layouts/PageLayout.astro'
+title: About
+activeHeaderLink: About
+---
+
+# About
+
+I'm a full-stack web developer with a passion for _Vue.js_ and its ecosystem. My other interests include [_Linux_](/tags/linux), _free and open-source software_, [_online privacy_](/tags/privacy), and _self-hosting_. When not at my desk, I enjoy [reading a good book](https://bookwyrm.social/user/FjellOverflow) and can be found traveling and [hiking in nature](https://pixelfed.social/FjellOverflow).
+
+import Logo from '@/assets/logo.svg'
+import { Image } from 'astro:assets'
+
+<div>
+  <Image src={Logo} class="w-1/3 md:w-1/6 mx-auto" alt="FjellOverflow logo, two grey mountains with stack of yellow boxes in front" loading="eager"/>
+</div>
+
+The name _FjellOverflow_ is a combination of the Norwegian word _Fjell_ (meaning mountain) and _Overflow_. It's a wordplay on the common computer science issue, the _stack overflow_, where a program runs out of memory due to errors and the virtual _mountain_ of a stack, blended together in the mountain-themed logo.
+
+This website uses the [Nordlys](https://github.com/FjellOverflow/nordlys) theme, created by myself with [Astro](https://astro.build/).

@@ -1,43 +1,21 @@
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react";
-import remarkToc from "remark-toc";
-import remarkCollapse from "remark-collapse";
-import sitemap from "@astrojs/sitemap";
-import { SITE } from "./src/config";
+import { defineConfig } from 'astro/config'
 
-// https://astro.build/config
+import mdx from '@astrojs/mdx'
+import sitemap from '@astrojs/sitemap'
+import tailwind from '@astrojs/tailwind'
+import codeHeadersPlugin from './src/plugins/codeHeadersPlugin'
+import readingTimePlugin from './src/plugins/readingTimePlugin'
+import config from './src/theme.config'
+
 export default defineConfig({
-  site: SITE.website,
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    react(),
-    sitemap(),
-  ],
+  site: config.site,
+  integrations: [tailwind(), mdx(), sitemap()],
   markdown: {
-    remarkPlugins: [
-      remarkToc,
-      [
-        remarkCollapse,
-        {
-          test: "Table of contents",
-        },
-      ],
-    ],
     shikiConfig: {
-      experimentalThemes: {
-        dark: "nord",
-        light: "github-light",
-      },
+      themes: config.shikiThemes,
       wrap: true,
+      transformers: [codeHeadersPlugin]
     },
-  },
-  vite: {
-    optimizeDeps: {
-      exclude: ["@resvg/resvg-js"],
-    },
-  },
-  scopedStyleStrategy: "where",
-});
+    remarkPlugins: [readingTimePlugin]
+  }
+})

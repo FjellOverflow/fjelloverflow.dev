@@ -1,37 +1,34 @@
-import { SITE } from "@config";
-import { defineCollection, z } from "astro:content";
+import config from '@/theme.config'
+import { defineCollection, z } from 'astro:content'
 
-const blog = defineCollection({
-  type: "content",
+const posts = defineCollection({
+  type: 'content',
   schema: ({ image }) =>
     z.object({
-      author: z.string().default(SITE.author),
-      pubDatetime: z.date(),
-      modDatetime: z.date().optional().nullable(),
       title: z.string(),
-      featured: z.boolean().optional(),
-      draft: z.boolean().optional(),
-      tags: z.array(z.string()).default(["others"]),
-      ogImage: image()
-        .refine(img => img.width >= 1200 && img.height >= 630, {
-          message: "OpenGraph image must be at least 1200 X 630 pixels!",
-        })
-        .or(z.string())
-        .optional(),
+      author: z.string().default(config.author),
       description: z.string(),
+      publishedDate: z.date(),
+      draft: z.boolean().optional().default(false),
       canonicalURL: z.string().optional(),
-    }),
-});
+      openGraphImage: image().or(z.string()).optional(),
+      tags: z.array(z.string()).default([]),
+      showToC: z.boolean().optional().default(true),
+      previewImage: image().or(z.string()).optional()
+    })
+})
 
-const bookLists = defineCollection({
-  type: "content",
-  schema: () =>
+const projects = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
     z.object({
       title: z.string(),
-      description: z.string().optional(),
-      url: z.string(),
-      height: z.number().optional()
-    }),
-});
+      url: z.string().optional(),
+      startDate: z.date(),
+      endDate: z.date().optional().nullable(),
+      tags: z.array(z.string()).default([]),
+      previewImage: image().or(z.string()).optional()
+    })
+})
 
-export const collections = { blog, bookLists };
+export const collections = { posts, projects }
