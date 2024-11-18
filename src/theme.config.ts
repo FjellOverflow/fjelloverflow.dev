@@ -9,7 +9,7 @@ export default defineThemeConfig({
     { label: 'Blog', href: '/posts' },
     { label: 'Projects', href: '/projects' },
     { label: 'Tags', href: '/tags' },
-    { label: 'About', href: '/about' },
+    { label: 'About', href: '/about' }
   ],
   footerItems: [
     {
@@ -42,7 +42,7 @@ export default defineThemeConfig({
     linux: 'tabler--device-imac',
     privacy: 'tabler--spy',
     tailwindcss: 'tabler--brand-tailwind',
-    tutorial: 'tabler--book',
+    tutorial: 'tabler--book'
   },
   shikiThemes: {
     light: 'github-light',
