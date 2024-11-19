@@ -5,7 +5,7 @@ startDate: 2024-09-30
 tags:
   - astro
   - tailwindcss
-previewImage: '@/assets/projects/nordlys.png'
+previewImage: '@/assets/projects/nordlys.svg'
 ---
 
 A minimal Astro blog theme, ideal for a personal blog and showcasing a projects portfolio.
