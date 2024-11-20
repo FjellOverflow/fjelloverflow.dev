@@ -9,8 +9,14 @@ export default defineThemeConfig({
     { label: 'Blog', href: '/posts' },
     { label: 'Projects', href: '/projects' },
     { label: 'Tags', href: '/tags' },
-    { label: 'Photos', href: '/photos' },
-    { label: 'About', href: '/about' }
+    { label: 'About', href: '/about' },
+    {
+      label: 'Other',
+      children: [
+        { label: 'Photos', icon: 'tabler--photo', href: '/photos' },
+        { label: 'Bookshelf', icon: 'tabler--book-2', href: '/bookshelf' }
+      ]
+    }
   ],
   footerItems: [
     {
