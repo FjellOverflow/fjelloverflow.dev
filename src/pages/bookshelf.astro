@@ -1,0 +1,25 @@
+---
+import BookwyrmList from '@/components/BookwyrmList.astro'
+import PageLayout, {
+  type Props as PageLayoutProps
+} from '@/layouts/PageLayout.astro'
+
+const listIds = ['3088', '3087', '3086', '3085']
+
+const frontmatter: PageLayoutProps['frontmatter'] = {
+  title: 'Bookshelf',
+  activeHeaderLink: 'Bookshelf'
+}
+---
+
+<PageLayout {frontmatter}>
+  <h1>{frontmatter.title}</h1>
+  <p>
+    I am a keen reader of both fiction and non-fiction. Below is a list of the
+    books I have read over the past few years, in chronological order. You can
+    also find me on <a href="https://bookwyrm.social/user/FjellOverflow/lists"
+      >Bookwyrm.</a
+    >
+  </p>
+  {listIds.map((listId) => <BookwyrmList {listId} />)}
+</PageLayout>
