@@ -1,9 +1,5 @@
 ---
-import type { ImageMetadata } from 'astro'
 import { Image } from 'astro:assets'
-import fs, { constants } from 'node:fs'
-import path from 'node:path'
-import { Readable } from 'node:stream'
 
 interface BookwormBook {
   id: string
@@ -19,28 +15,6 @@ export interface Props {
 }
 
 const { listId } = Astro.props
-
-async function downloadCover(book: BookwormBook) {
-  const response = await fetch(book.cover.url)
-
-  if (!response.ok) {
-    throw new Error(`Response status: ${response.status}`)
-  }
-  const fileTitle = book.id.split('/').pop()
-  const fileExt = book.cover.url.split('.').pop()
-  const filePath = path.join('src/assets/bookCovers', `${fileTitle}.${fileExt}`)
-
-  fs.access(filePath, constants.F_OK, (err) => {
-    if (err) {
-      const fileStream = fs.createWriteStream(filePath)
-
-      if (response.body) Readable.from(response.body).pipe(fileStream)
-      console.log(`Downloaded ${filePath}.`)
-    }
-  })
-
-  return filePath
-}
 
 async function loadBookwyrmListPage(
   pageNumber: number
@@ -82,48 +56,31 @@ async function loadBookwyrmList() {
 
   let page = 0
 
-  let loadedBooks: BookwormBook[] = []
+  let books: BookwormBook[] = []
 
-  while (loadedBooks.length < totalItems) {
+  while (books.length < totalItems) {
     page += 1
-    loadedBooks = loadedBooks.concat(await loadBookwyrmListPage(page))
+    books = books.concat(await loadBookwyrmListPage(page))
   }
 
   return {
-    books: Promise.all(
-      loadedBooks.map(async (book) => ({
-        ...book,
-        cover: { url: await downloadCover(book) }
-      }))
-    ),
+    books,
     name,
     summary
   }
 }
 
 const bookList = await loadBookwyrmList()
-
-const rawBooks = await bookList.books
-
-const bookCovers = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/bookCovers/*'
-)
-
-const books = rawBooks.map((book) => ({
-  title: book.title,
-  href: book.id,
-  cover: bookCovers[`/${book.cover.url}`]()
-}))
 ---
 
 <h2>{bookList.name}</h2>
 
 <div class="flex flex-wrap justify-around gap-4">
   {
-    books.map(({ href, cover, title }) => (
-      <a {href} target="_blank">
+    bookList.books.map(({ id, cover: { url }, title }) => (
+      <a href={id} target="_blank">
         <Image
-          src={cover}
+          src={url}
           {title}
           height={216}
           width={140}
