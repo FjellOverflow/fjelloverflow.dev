@@ -17,5 +17,13 @@ export default defineConfig({
       transformers: [codeHeadersPlugin]
     },
     remarkPlugins: [readingTimePlugin]
+  },
+  image: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'bookwyrm-social.sfo3.digitaloceanspaces.com'
+      }
+    ]
   }
 })
