@@ -49,7 +49,8 @@ export default defineThemeConfig({
     linux: 'tabler--device-imac',
     privacy: 'tabler--spy',
     tailwindcss: 'tabler--brand-tailwind',
-    tutorial: 'tabler--book'
+    tutorial: 'tabler--book',
+    vue: 'tabler--brand-vue'
   },
   shikiThemes: {
     light: 'github-light',
