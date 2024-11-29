@@ -77,7 +77,7 @@ $ dockcheck.sh
 
 Advantages of that approach are that no images are being pulled when checking for updates, so we don't accidentally switch to a newer `latest` image when we recreate a container for some reason. Also, while the tool does the actual updating work for us, we get a nice prompt beforehand, at which we can pause, look into release notes, or check containers. We can basically, on a per-case basis, decide if we do or if we do not want to update a container right now. Ultimately, we are in control of when and what to update, but _Dockcheck_ does the work and also offers plenty of nice configuration options, for instance notifications, pruning, and more.
 
-## Full automation with _Watchtower_
+### Full automation with _Watchtower_
 
 If we are even more trusting or simply do not care if things break at any time, we could of course update containers automatically. [Watchtower](https://github.com/containrrr/watchtower) is run as a Docker container itself, configured with ENV variables, and will in a specified interval check for newer images, pull them, and recreate containers with the newer image.
 
