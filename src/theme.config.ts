@@ -44,12 +44,12 @@ export default defineThemeConfig({
   tagIcons: {
     ansible: 'tabler--brand-ansible',
     astro: 'tabler--brand-astro',
+    devops: 'tabler--device-imac-cog',
     docker: 'tabler--brand-docker',
     encryption: 'tabler--lock',
     linux: 'tabler--device-imac',
     privacy: 'tabler--spy',
     tailwindcss: 'tabler--brand-tailwind',
-    tutorial: 'tabler--book',
     vue: 'tabler--brand-vue'
   },
   shikiThemes: {
