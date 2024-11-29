@@ -17,7 +17,7 @@ import { Image } from 'astro:assets'
 
 ## Semantic Versioning
 
-A widely adopted system for versioning software is *Semantic Versioning*, or *SemVer* for short. Chances are high that you have seen or used it already, perhaps even without realizing that this intuitive system is actually a strict specification. SemVer versions may look like `2.10.4`, `0.2.0` or `1.2.1-rc.2`.
+A widely adopted system for versioning software is *Semantic Versioning*, or *SemVer*[^semver] for short. Chances are high that you have seen or used it already, perhaps even without realizing that this intuitive system is actually a strict specification. SemVer versions may look like `2.10.4`, `0.2.0` or `1.2.1-rc.2`.
 
 A SemVer version is a `<major>.<minor>.<patch>` string, where `major`, `minor` and `patch` are numbers starting with `0` and incremented in steps of `1`. In short, the new version after a code change is determined by the following rules:
 
@@ -38,7 +38,7 @@ While this specification is neat and not overly complicated, one might wonder ho
 
 ## Conventional Commits
 
-The answer is "no", at least if we are using version control (git). *Conventional Commits* is another specificiation closely related to SemVer, dictating the format and content of commit messages. By following the Conventional Commits specification during development, we can use handy tools or scripts to detect all changes since the last release and automatically increment the version appropriately. Conventional Commit messages could be:
+The answer is "no", at least if we are using version control (git). *Conventional Commits*[^conventional-commits] is another specificiation closely related to SemVer, dictating the format and content of commit messages. By following the Conventional Commits specification during development, we can use handy tools or scripts to detect all changes since the last release and automatically increment the version appropriately. Conventional Commit messages could be:
 
 - `fix: rounding error in final sum calculation`
 - `feat(invoices): add PDF export`
@@ -129,3 +129,6 @@ Having covered all the puzzle pieces for a good versioning workflow, let's recap
   - 🤖 *(Or we use a tool that bumps the version and generates the changelog)*
 
 Of course, there are plenty of scenarios where additional or different requirements, steps, and tools need to be involved in the release process. It is not mandatory to follow the listed conventions, but a growing number of open-source projects do adhere to them, and if in doubt, you should definitely consider adopting these practices for your project or team!
+
+[^semver]: [semver.org](https://semver.org/)
+[^conventional-commits]: [conventionalcommits.org](https://www.conventionalcommits.org/)
