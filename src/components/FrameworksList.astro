@@ -1,0 +1,66 @@
+---
+import FrameworkCard, { type Framework } from './Framework.astro'
+
+export interface Props {
+  frameworks: Framework[]
+  perRow?: number
+  class?: string
+}
+
+const { frameworks, perRow = 4, class: className, ...rest } = Astro.props
+
+const rows = [
+  new Array(perRow).fill(undefined),
+  ...Array.from(new Array(Math.ceil(frameworks.length / perRow)), (_, i) =>
+    frameworks.slice(i * perRow, i * perRow + perRow)
+  ),
+  new Array(perRow).fill(undefined)
+].map((row) => [
+  undefined,
+  ...row,
+  ...new Array(perRow - row.length + 1).fill(undefined)
+])
+---
+
+<div class={`frameworks-container ${className}`} {...rest}>
+  <div class="frameworks-list">
+    {
+      rows.map((row) => (
+        <div class="frameworks-row">
+          {row.map((framework) => (
+            <FrameworkCard {framework} />
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</div>
+<style>
+  .frameworks-row {
+    @apply mb-2 flex gap-2 odd:-ml-6 even:ml-6 sm:mb-4 sm:gap-4 md:mb-6 md:gap-6;
+  }
+
+  .frameworks-container {
+    @apply relative h-full overflow-hidden;
+
+    &:before {
+      @apply pointer-events-none absolute left-0 z-10 h-full w-12 bg-gradient-to-r from-accent-bg to-transparent content-[''] sm:w-20 md:w-32;
+    }
+
+    &:after {
+      @apply pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-accent-bg to-transparent content-[''] sm:w-20 md:w-32;
+    }
+  }
+
+  .frameworks-list {
+    @apply relative w-full overflow-hidden;
+
+    &:before {
+      @apply pointer-events-none absolute top-0 z-10 h-12 w-full bg-gradient-to-b from-accent-bg to-transparent content-[''] sm:h-20 md:h-32;
+    }
+
+    &:after {
+      @apply pointer-events-none absolute bottom-0 z-10 h-12 w-full bg-gradient-to-b from-transparent to-accent-bg content-[''] sm:h-20 md:h-32;
+    }
+  }
+</style>
