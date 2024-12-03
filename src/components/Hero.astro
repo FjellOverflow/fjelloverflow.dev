@@ -16,7 +16,7 @@ const { gradient, background, logo: showLogo } = Astro.props.frontmatter
 <div class="w-fit">
   <div
     class:list={[
-      'relative mb-1 w-fit pb-2 text-5xl font-bold tracking-tight text-accent sm:mb-2 sm:text-8xl',
+      'relative mb-1 w-fit pb-2 font-bold tracking-tight text-accent sm:mb-2',
       {
         'bg-gradient-to-r from-accent/100 via-accent/75 to-accent/50 bg-clip-text text-transparent':
           gradient
@@ -24,7 +24,7 @@ const { gradient, background, logo: showLogo } = Astro.props.frontmatter
       {
         'mb-2 sm:mb-8': background
       },
-      { 'text-4xl sm:text-7xl': showLogo }
+      { 'text-4xl sm:text-7xl': showLogo, 'text-5xl sm:text-8xl': !showLogo }
     ]}
   >
     <div class="flex items-center gap-4 sm:gap-8">
