@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.0](https://github.com/FjellOverflow/nordlys/compare/v1.2.0...v2.0.0) (2024-12-06)
+
+### ⚠ BREAKING CHANGES
+
+- migrate to Astro 5 ([ffa296b](https://github.com/FjellOverflow/nordlys/commit/ffa296be560e357d763a3546b5b904bfd6d78dc8))
+
+### Bug Fixes
+
+- rewrite codeHeadersPlugin without postProcess shiki hook ([8624fe0](https://github.com/FjellOverflow/nordlys/commit/8624fe0ea24811489fe1249ff1aaa61691c7a020))
+
+## [1.2.0](https://github.com/FjellOverflow/nordlys/compare/v1.1.2...v1.2.0) (2024-12-04)
+
+### Features
+
+- load og image logo from urlEncoded local SVG ([9021d54](https://github.com/FjellOverflow/nordlys/commit/9021d54331d7d3d7f65a308eef119684c8c7eb46)), closes [#2](https://github.com/FjellOverflow/nordlys/issues/2)
+
 ## [1.1.2](https://github.com/FjellOverflow/nordlys/compare/v1.1.1...v1.1.2) (2024-12-02)
 
 ### Bug Fixes
