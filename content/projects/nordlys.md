@@ -5,6 +5,7 @@ startDate: 2024-09-30
 tags:
   - astro
   - tailwindcss
+  - typescript
 previewImage: '@/assets/projects/nordlys.svg'
 ---
 
