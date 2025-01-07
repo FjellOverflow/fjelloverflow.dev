@@ -5,6 +5,7 @@ export default defineThemeConfig({
   title: 'FjellOverflow',
   description: 'Personal website and Blog.',
   author: 'FjellOverflow',
+  projectsPerPage: 10,
   navbarItems: [
     { label: 'Blog', href: '/posts' },
     { label: 'Projects', href: '/projects' },
@@ -50,6 +51,7 @@ export default defineThemeConfig({
     linux: 'tabler--device-imac',
     privacy: 'tabler--spy',
     tailwindcss: 'tabler--brand-tailwind',
+    typescript: 'tabler--brand-typescript',
     vue: 'tabler--brand-vue'
   },
   shikiThemes: {
