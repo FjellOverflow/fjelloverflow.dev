@@ -2,12 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [2.0.1](https://github.com/FjellOverflow/nordlys/compare/v2.0.0...v2.0.1) (2024-12-07)
+## [2.0.2](https://github.com/FjellOverflow/nordlys/compare/v2.0.1...v2.0.2) (2025-01-07)
+
 
 ### Bug Fixes
 
-- exclude arbitrary pages from being indexed by pagefind ([9416b5f](https://github.com/FjellOverflow/nordlys/commit/9416b5ff6382ea7c1ff3bc774d72b213abc973b9))
-- readd local image support to Project content schema ([b494298](https://github.com/FjellOverflow/nordlys/commit/b49429852a5fa81b76306798dd2c0b0ef08b4911))
+* date range entirely right in project preview ([1a5a369](https://github.com/FjellOverflow/nordlys/commit/1a5a3693898dcd93c1f1606b3ab481bd3b747fae))
+* require `previewImage` and `opengraphImage`to always be image in content collections ([39aad53](https://github.com/FjellOverflow/nordlys/commit/39aad537e5e0b68b10bc6fdcac9d50ad09efed02))
+
+## [2.0.1](https://github.com/FjellOverflow/nordlys/compare/v2.0.0...v2.0.1) (2024-12-07)
+
+
+### Bug Fixes
+
+* exclude arbitrary pages from being indexed by pagefind ([9416b5f](https://github.com/FjellOverflow/nordlys/commit/9416b5ff6382ea7c1ff3bc774d72b213abc973b9))
+* readd local image support to Project content schema ([b494298](https://github.com/FjellOverflow/nordlys/commit/b49429852a5fa81b76306798dd2c0b0ef08b4911))
 
 ## [2.0.0](https://github.com/FjellOverflow/nordlys/compare/v1.2.0...v2.0.0) (2024-12-06)
 
