@@ -1,0 +1,47 @@
+---
+export interface Framework {
+  name: string
+  logo: string
+  color: string
+  url: string
+}
+
+export interface Props {
+  framework?: Framework
+}
+
+const { framework } = Astro.props
+---
+
+{
+  framework ? (
+    <a
+      href={framework.url}
+      target="_blank"
+      rel="noopener"
+      class="framework-item"
+      style={`--glow-color: ${framework.color}`}
+    >
+      <img src={framework.logo} alt={framework.name} />
+    </a>
+  ) : (
+    <div class="framework-item scale-100 hover:scale-90" />
+  )
+}
+
+<style>
+  .framework-item {
+    @apply relative flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl border border-accent border-opacity-25 bg-[#d2d9e7] p-4 transition-all duration-1000 ease-in-out sm:h-20 sm:w-20 sm:p-5 md:h-28 md:w-28 md:p-7 dark:bg-[#191d24];
+
+    img {
+      @apply select-none;
+      filter: drop-shadow(
+        0 0 1.2rem color-mix(in srgb, var(--glow-color) 50%, transparent)
+      );
+    }
+
+    &:before {
+      @apply absolute bottom-[10%] left-[10%] right-[10%] top-[10%] -z-10 bg-[--glow-color] opacity-0 blur-lg transition-opacity duration-1000 ease-in-out content-[''] hover:opacity-100;
+    }
+  }
+</style>

@@ -1,0 +1,55 @@
+---
+import FrameworksList from '@/components/FrameworksList.astro'
+import PageLayout, {
+  type Props as PageLayoutProps
+} from '@/layouts/PageLayout.astro'
+
+const frameworks = [
+  {
+    name: 'Vue',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg',
+    color: '#4FC08D',
+    url: 'https://vuejs.org/'
+  },
+  {
+    name: 'Vite',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg',
+    color: '#646CFF',
+    url: 'https://vite.dev/'
+  },
+  {
+    name: 'Vuetify',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuetify/vuetify-original.svg',
+    color: '#1867C0',
+    url: 'https://vuetifyjs.com/'
+  },
+  {
+    name: 'React',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+    color: '#61DAFB',
+    url: 'https://react.dev/'
+  },
+  {
+    name: 'Vitest',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg',
+    color: '#6E9F18',
+    url: 'https://vitest.dev/'
+  },
+  {
+    name: 'Cypress',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg',
+    color: '#69D3A7',
+    url: 'https://www.cypress.io/'
+  }
+]
+
+const frontmatter: PageLayoutProps['frontmatter'] = {
+  title: 'Frameworks',
+  activeHeaderLink: 'frameworks'
+}
+---
+
+<PageLayout {frontmatter}>
+  <h1>{frontmatter.title}</h1>
+  <FrameworksList {frameworks} />
+</PageLayout>
