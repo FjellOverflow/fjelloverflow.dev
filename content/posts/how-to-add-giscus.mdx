@@ -2,16 +2,16 @@
 title: How to add Giscus comments to Nordlys
 description: User comments on a static blog hosted on GitHub Pages with Giscus
 publishedDate: 2024-01-25
-openGraphImage: '@/assets/posts/how-to-add-giscus.jpg'
-previewImage: '@/assets/posts/how-to-add-giscus.jpg'
+openGraphImage: '../assets/posts/how-to-add-giscus.jpg'
+previewImage: '../assets/posts/how-to-add-giscus.jpg'
 tags:
   - astro
 ---
 
 Hosting a thin static blog on a platform like [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) has numerous advantages but also takes away some interactivity. Fortunately, [Giscus](https://giscus.app/) exists and offers a way to embed user comments on static sites.
 
-import PreviewImage from '@/assets/posts/how-to-add-giscus.jpg'
 import { Image } from 'astro:assets'
+import PreviewImage from '../assets/posts/how-to-add-giscus.jpg'
 
 <Image src={PreviewImage} class="sm:w-2/3 w-4/5 my-0 mx-auto" data-img-embed alt="A computer monitor with chat bubbles floating around it" loading="eager"/>
 
