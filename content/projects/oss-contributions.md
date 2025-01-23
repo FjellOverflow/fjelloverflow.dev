@@ -9,6 +9,12 @@ I have also contributed to several open-source projects, including:
 
 <ul>
     <li>
+        <a href="https://github.com/sysadminsmedia/homebox" target="_blank" class="mb-2 text-xl font-normal no-underline">
+            <span aria-hidden="true" class="iconify tabler--brand-github align-middle text-2xl"></span>
+            <span class="underline">sysadminsmedia/homebox</span>
+        </a>
+    </li>
+    <li>
         <a href="https://github.com/homarr-labs/dashboard-icons" target="_blank" class="mb-2 text-xl font-normal no-underline">
             <span aria-hidden="true" class="iconify tabler--brand-github align-middle text-2xl"></span>
             <span class="underline">homarr-labs/dashboard-icons</span>
