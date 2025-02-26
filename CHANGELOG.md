@@ -2,17 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-## [2.1.0](https://github.com/FjellOverflow/nordlys/compare/v2.0.3...v2.1.0) (2025-01-25)
-
-
-### Features
-
-* scrollable ToC ([7ea348d](https://github.com/FjellOverflow/nordlys/commit/7ea348d004900ae03f0a3199d69381330837d0c5)) by @patrickpiedad
+## [2.1.1](https://github.com/FjellOverflow/nordlys/compare/v2.1.0...v2.1.1) (2025-02-25)
 
 ### Bug Fixes
 
-* add stylelint exception for tailwinds `@apply` ([cd95918](https://github.com/FjellOverflow/nordlys/commit/cd9591846a90c9b9aaf7252b454864b42c36d4c0))
-* post og-image generation ([11df323](https://github.com/FjellOverflow/nordlys/commit/11df323c7418ceb5937b0d63ad5a68398c384788))
+- **seo:** link to canonical URLs with trailing slash ([2dbb430](https://github.com/FjellOverflow/nordlys/commit/2dbb4300d750e0aa49e04ed010e573146b18cc8e))
+
+## [2.1.0](https://github.com/FjellOverflow/nordlys/compare/v2.0.3...v2.1.0) (2025-01-25)
+
+### Features
+
+- scrollable ToC ([7ea348d](https://github.com/FjellOverflow/nordlys/commit/7ea348d004900ae03f0a3199d69381330837d0c5)) by @patrickpiedad
+
+### Bug Fixes
+
+- add stylelint exception for tailwinds `@apply` ([cd95918](https://github.com/FjellOverflow/nordlys/commit/cd9591846a90c9b9aaf7252b454864b42c36d4c0))
+- post og-image generation ([11df323](https://github.com/FjellOverflow/nordlys/commit/11df323c7418ceb5937b0d63ad5a68398c384788))
 
 Big thanks to @patrickpiedad his much appreciated contribution to the project 🥳!
 

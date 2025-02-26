@@ -2,14 +2,15 @@ import { defineConfig } from 'astro/config'
 
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import codeHeadersPlugin from './src/plugins/codeHeadersPlugin'
 import readingTimePlugin from './src/plugins/readingTimePlugin'
 import config from './src/theme.config'
 
 export default defineConfig({
   site: config.site,
-  integrations: [tailwind(), mdx(), sitemap()],
+  integrations: [mdx(), sitemap()],
+
   markdown: {
     shikiConfig: {
       themes: config.shikiThemes,
@@ -25,5 +26,8 @@ export default defineConfig({
         hostname: 'bookwyrm-social.sfo3.digitaloceanspaces.com'
       }
     ]
+  },
+  vite: {
+    plugins: [tailwindcss()]
   }
 })
