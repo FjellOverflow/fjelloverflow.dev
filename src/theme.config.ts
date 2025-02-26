@@ -7,15 +7,15 @@ export default defineThemeConfig({
   author: 'FjellOverflow',
   projectsPerPage: 10,
   navbarItems: [
-    { label: 'Blog', href: '/posts' },
-    { label: 'Projects', href: '/projects' },
-    { label: 'Tags', href: '/tags' },
-    { label: 'About', href: '/about' },
+    { label: 'Blog', href: '/posts/' },
+    { label: 'Projects', href: '/projects/' },
+    { label: 'Tags', href: '/tags/' },
+    { label: 'About', href: '/about/' },
     {
       label: 'Other',
       children: [
-        { label: 'Photos', icon: 'tabler--photo', href: '/photos' },
-        { label: 'Bookshelf', icon: 'tabler--book-2', href: '/bookshelf' }
+        { label: 'Photos', icon: 'tabler--photo', href: '/photos/' },
+        { label: 'Bookshelf', icon: 'tabler--book-2', href: '/bookshelf/' }
       ]
     }
   ],
