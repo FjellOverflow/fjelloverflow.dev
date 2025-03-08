@@ -75,7 +75,7 @@ const bookList = await loadBookwyrmList()
 
 <h2>{bookList.name}</h2>
 
-<div class="flex flex-wrap justify-start gap-4">
+<div class="flex flex-wrap justify-center gap-4 md:justify-start">
   {
     bookList.books.map(({ id, cover: { url }, title }) => (
       <a href={id} target="_blank">
@@ -83,8 +83,8 @@ const bookList = await loadBookwyrmList()
           src={url}
           {title}
           height={216}
-          width={140}
-          style="height:216px; width:auto;"
+          width={140.8}
+          style="height:216px; width:140.8px;"
           class="mt-0 mr-0 mb-0 ml-0"
           alt={`${title} cover`}
         />
