@@ -7,4 +7,4 @@ tags:
 previewImage: '../assets/projects/note-pls.svg'
 ---
 
-A small, self-hosted Telegram bot that takes notes. Written in TypeScript.
+A small, self-hosted Telegram bot that takes notes.

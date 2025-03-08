@@ -8,4 +8,4 @@ tags:
 previewImage: '../assets/projects/vue3-starter.svg'
 ---
 
-A [Vue.js](https://vuejs.org) starter template. Fully configured with all essentials for new frontend projects.
+A Vue.js starter template. Fully configured with all essentials for new frontend projects.
