@@ -1,7 +1,6 @@
 ---
 title: Open Source contributions
 url: https://github.com/pulls?q=is%3Apr+author%3AFjellOverflow+merged%3A%3E2023-01-01
-startDate: 2018-11-15
 previewImage: '../assets/projects/oss-contributions.svg'
 ---
 

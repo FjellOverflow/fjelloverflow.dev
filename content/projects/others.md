@@ -1,12 +1,11 @@
 ---
 title: Other projects
-startDate: 2018-11-14
 tags:
   - ansible
   - linux
 ---
 
-Sometimes, I work on smaller, rather niche projects, such as
+Sometimes, I work on smaller, rather niche projects, such as:
 
 <ul>
     <li>
