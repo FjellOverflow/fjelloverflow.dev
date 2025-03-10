@@ -1,0 +1,91 @@
+---
+title: Triggering PWA Installation Dialog with Vue
+description: How to trigger the PWA installation in Chrome with Vue
+publishedDate: 2025-03-09
+previewImage: '../assets/posts/prompting-PWA-install.jpg'
+openGraphImage: '../assets/posts/prompting-PWA-install.jpg'
+tags:
+  - vue
+  - typescript
+---
+
+When you create a Progressive Web App (PWA), you likely want your users to install the app on their mobile devices so that it appears and functions like a native app. Chrome provides an installation prompt that appears when your app meets all PWA criteria. However, wouldn't it be convenient if your app could include an `Install` button that users can click to install the app? Here's how to do that!
+
+import { Image } from 'astro:assets'
+import PreviewImage from '../assets/posts/prompting-PWA-install.jpg'
+
+<Image src={PreviewImage} class="sm:w-2/3 w-4/5 my-0 mx-auto" data-img-embed alt="A penguin standing in an icy landscape, holding a small key" loading="eager"/>
+
+## Prerequisite
+
+Before you get started, ensure that you have already implemented PWA support in your web app. With Vue (or Vite-based projects), you can use [Vite-PWA](https://vite-pwa-org.netlify.app/) to get started with that. Make sure your app fulfills the PWA criteria; otherwise, the installation prompt will never be invoked by the browser.
+
+Also note, that of the the moment of writing this, its only Chrome browser that offers this installtion prompt so far.
+
+## Catching the event
+
+To offer the installation prompt to the user, you need to catch the event when it fires from the browser. Start by creating a file `pwaInstall.ts` and defining the `BeforeInstallPromptEvent`.
+
+```typescript pwaInstall.ts
+// define type for event
+interface BeforeInstallPromptEvent extends Event {
+  readonly platforms: Array<string>
+  readonly userChoice: Promise<{
+    outcome: 'accepted' | 'dismissed'
+    platform: string
+  }>
+  prompt(): Promise<void>
+}
+
+// create ref to hold the event
+const pwaInstallPromptEvent = ref<BeforeInstallPromptEvent>()
+```
+
+Next, we want to define the function that catches the event and stores it in the `ref`. Don't forget to export both the `function` and the `ref`.
+
+```typescript pwaInstall.ts
+function checkIfInstallable() {
+  window.addEventListener('beforeinstallprompt', (event) => {
+
+    // block the event
+    event.preventDefault()
+
+    // and store the caught event
+    pwaInstallPromptEvent.value = event as BeforeInstallPromptEvent
+  })
+}
+
+export { checkIfInstallable, pwaInstallPromptEvent }
+```
+
+Now we need to ensure that the function is executed at the entry point of our app. In Vue, that is the `main.ts` file. Simply import the function we wrote and call it.
+
+```typescript main.ts
+import App from '@/App.vue'
+import { checkIfInstallable } from 'src/pwaInstall'
+
+const app = createApp(App)
+
+app.mount('#app')
+
+checkIfInstallable()
+```
+
+## Showing `Install` button
+
+Having caught and stored the event, what's left is to show a button that invokes the installation, if possible.
+
+In your HTML (Vue component), you can now add this button
+
+```vue MyComponent.vue
+<script setup lang="ts">
+import { pwaInstallPromptEvent } from 'src/pwaInstall'
+</script>
+<template>
+    <button v-if="pwaInstallPromptEvent" @click="pwaInstallPromptEvent.prompt()">
+        Install PWA
+    </button>
+</template>
+```
+
+With this, the button will only be shown if installation is actually possible, and it will trigger the prompt when clicked. And that's it!
