@@ -1,5 +1,6 @@
 ---
 title: Other projects
+previewImage: '../assets/projects/others.svg'
 tags:
   - ansible
   - linux
