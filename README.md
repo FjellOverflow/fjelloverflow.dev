@@ -12,4 +12,8 @@
   Personal website and Blog.
 </p>
 
+<p align="center">
+  <img src="./public/preview.png" width="85%"/>
+</p>
+
 A static website, built with Astro, hosted on Github Pages. Uses the [Nordlys](https://github.com/FjellOverflow/nordlys) Astro theme, created by myself.
