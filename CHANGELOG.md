@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.3.0](https://github.com/FjellOverflow/nordlys/compare/v2.2.0...v2.3.0) (2025-03-22)
+
+### ⚠ BREAKING CHANGES
+
+For medium-zoom on images, a new `data-action="zoom"` attribute has been introduced. That means images with the `data-img-embed` attributes will no longer be zoomable; to fix this you need to add the addtional attribute `data-action="zoom"` to your images.
+
+### Features
+
+- make project startDate optional, sort projects without to list bottom ([54fe562](https://github.com/FjellOverflow/nordlys/commit/54fe562662ba14753185c5dedd109c817f8c8da6))
+
+### Bug Fixes
+
+- add missing trailing slash to canonicalURL ([acedf7e](https://github.com/FjellOverflow/nordlys/commit/acedf7e03707e382a5a9478c8c8ab2dcc1351e27))
+- correct dark mode colors for syntax highlighted blox ([c720e71](https://github.com/FjellOverflow/nordlys/commit/c720e717031d3edeadf07fc8d0b3e147ace9dbba))
+- switch medium-zoom lib for better Safari browser support ([d3cc91b](https://github.com/FjellOverflow/nordlys/commit/d3cc91b551fffd4fafd9eeb0d321191a7ea5dd6d))
+
 ## [2.2.0](https://github.com/FjellOverflow/nordlys/compare/v2.1.3...v2.2.0) (2025-03-07)
 
 ### Features
