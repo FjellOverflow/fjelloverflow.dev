@@ -50,6 +50,8 @@ export default defineThemeConfig({
     encryption: 'tabler--lock',
     linux: 'tabler--device-imac',
     privacy: 'tabler--spy',
+    react: 'tabler--brand-react',
+    sql: 'tabler--database',
     tailwindcss: 'tabler--brand-tailwind',
     typescript: 'tabler--brand-typescript',
     vue: 'tabler--brand-vue'
