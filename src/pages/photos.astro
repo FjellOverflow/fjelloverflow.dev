@@ -21,10 +21,10 @@ const photos = await getCollection('photos')
     <a href="https://pixelfed.social/FjellOverflow">Pixelfed</a>.
   </p>
 
-  <div class="columns-1 gap-2 sm:columns-2 md:columns-3">
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
     {
       photos.map((photo) => (
-        <div class="group relative">
+        <div class="group relative aspect-square">
           <Image
             src={photo.data.url}
             title={photo.data.label}
@@ -32,9 +32,9 @@ const photos = await getCollection('photos')
             inferSize
             data-img-embed
             data-action="zoom"
-            class="mt-0 mr-0 mb-0 ml-0 rounded-none! border-0! pb-2"
+            class="mt-0 mr-0 mb-0 ml-0 h-full w-full rounded-none! border-0! object-cover pb-0"
           />
-          <div class="pointer-events-none absolute inset-0 mb-2 flex items-end justify-center bg-black/65 p-2 text-start text-sm text-white opacity-0 transition duration-500 ease-in-out group-hover:opacity-100">
+          <div class="pointer-events-none absolute inset-0 mb-0 flex items-end justify-center bg-black/65 p-2 text-start text-sm text-white opacity-0 transition duration-500 ease-in-out group-hover:opacity-100">
             {photo.data.label}
           </div>
         </div>
