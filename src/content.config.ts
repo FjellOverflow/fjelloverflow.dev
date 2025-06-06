@@ -1,5 +1,5 @@
 import config from '@/theme.config'
-import { glob } from 'astro/loaders'
+import { file, glob } from 'astro/loaders'
 import { defineCollection, z } from 'astro:content'
 
 const posts = defineCollection({
@@ -35,4 +35,13 @@ const projects = defineCollection({
     })
 })
 
-export const collections = { posts, projects }
+const photos = defineCollection({
+  loader: file('./content/photos.json'),
+  schema: z.object({
+    id: z.string(),
+    label: z.string(),
+    url: z.string()
+  })
+})
+
+export const collections = { posts, projects, photos }
