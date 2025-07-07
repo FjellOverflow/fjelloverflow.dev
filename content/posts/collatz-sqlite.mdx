@@ -1,0 +1,110 @@
+---
+title: Testing the Collatz Conjecture with recursive SQL
+description: Using Common Table Expressions in SQLite to test the Collatz Conjecture
+publishedDate: 2025-07-07
+previewImage: '../assets/posts/collatz-sqlite.png'
+openGraphImage: '../assets/posts/collatz-sqlite.png'
+tags:
+  - sql
+---
+
+While playing around with SQLite recently, I came about an interesting challenge: testing the Collatz Conjecture in SQLite. This task, quite straightforward in imperative programming with loops, required some outside-the-box thinking in SQL. In this post I want to walk through the problem and the solution!
+
+import { Image } from 'astro:assets'
+import PreviewImage from '../assets/posts/collatz-sqlite.png'
+
+<Image src={PreviewImage} class="sm:w-2/3 w-4/5 my-0 mx-auto" data-img-embed alt="A visualization of the paths from each integer down to 1 according to the Collatz Conjecture" loading="eager"/>
+
+## The Collatz Conjecture
+
+For those unfamiliar with it (most CS students will encounter it in their first university semester), the *Collatz Conjecture*[^collatz-conjecture] is a famous maths problem. It asks the simple yet intriguing question of:
+
+> If you start with any positive integer and repeatedly divide it by 2 if it's even, or multiply it by 3 and add 1 if it's odd, will you always eventually reach the number 1?
+
+As a *conjecture*, it is believed to be true but not yet proven. But even without a mathematics degree, you can easily test the conjecture for any number. Here are a few exaples:
+
+- 3 - 10 - 5 - 16 - 8 - 4 - 2 - 1. It works.
+- 17 - 52 - 26 - 13 - 40 - 20 - 10 - 5 - 16 - 8 - 4 - 2 - 1. It works again!
+
+You can check any other integers as well, and you will likely reach 1 with each of them after a while.
+
+## Testing it programmatically
+
+To test the Collatz Conjecture programmatically, you can write a straightforward script. Here is an example in Python:
+
+```python collatz.py
+n = 17
+steps = 0
+
+while n > 1:
+    steps += 1
+    if n  2 == 0:
+        n //= 2
+    else:
+        n = ns * 3 + 1
+
+print(steps) 
+```
+
+This script uses a simple loop to apply the Collatz rules until it reaches `1`, then prints the steps taken. Note that this assumes the conjecture actually holds, otherwise the loop runs indefinitely (but I am optimistic 😉).
+
+## Recursive Common Table Expressions in SQL
+
+All nice and easy so far, but what about doing the same in SQL? While loops are available in various SQL dialects, allowing us to port our Python solution directly, SQLite does not support loops as of now. So, how can we construct a loop in SQLite?
+
+*Enter Recursive Common Table Expressions (CTEs)*[^ctes]! Without going too deeply into the details, CTEs in SQL are temporary result sets that can be referenced within another SQL statement to simplify complex queries, avoid duplication, access hierarchical data, and keep code modular and clean. For the syntax, see this simple example:
+
+```sql my_cte.sql
+WITH my_cte AS (
+  SELECT a,b,c
+  FROM table_A
+)
+
+SELECT a,c
+FROM my_cte
+WHERE ....
+```
+
+The neat part of CTEs is their ability to reference themselves, making them an excellent tool for emulating loops in SQLite!
+
+## Collatz Conjecture in SQLite
+
+Without further ado, I present the Collatz Conjecture implemented in SQLite, utilizing a recursive Common Table Expression (CTE):
+
+```sql collatz.sql
+WITH RECURSIVE collatz AS (
+	SELECT 17 AS n
+	UNION ALL
+	SELECT IIF(MOD(n, 2) = 1, 3 * n + 1, n / 2) AS n
+	FROM collatz
+	WHERE n != 1
+)
+
+SELECT COUNT(*) - 1 AS steps
+FROM collatz
+```
+
+This CTE starts with the number `n`, which is `17` in this case. It then recursively calls itself using `UNION ALL`, appending either `n / 2` or `n * 3 + 1` to the result set based on whether `n` is even or odd. The `WHERE n != 1` condition ensures that the recursion stops once `n` reaches `1` and prevents infinite loops.
+
+By calling this CTE, we generate all integers derived from the starting number down to `1`. Counting these integers gives us the exact number of steps required to reach `1` from `n`.
+
+For those who find it helpful, here is the Python equivalent of the SQL query:
+
+```python collatz-recursive.py
+def collatz(n):
+    if n == 1:
+        return 0
+    elif n % 2 == 1:
+        return 1 + collatz(3 * n + 1)
+    else:
+        return 1 + collatz(n // 2)
+
+print(collatz(17))
+```
+
+## Conclusion
+
+The mathematics and programming constructs presented in this post are not rocket science, but for me the SQLite solution to the problem has a certain elegance. Common Table Expressions (CTEs) can be a versatile and useful tool, and are certainly worth to be studied in detail. They are especially helpful for tasks such as implementing loops or generating integer sequences, and a problem like the Collatz Conjecture is the perfect example of their application on a real problem!
+
+[^collatz-conjecture]: [Collatz Conjecture on Wikipedia](https://en.wikipedia.org/wiki/Collatz_conjecture)
+[^ctes]: [CTEs on GeeksForGeeks](https://www.geeksforgeeks.org/sql/cte-in-sql/)
