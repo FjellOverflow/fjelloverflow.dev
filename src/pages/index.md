@@ -3,6 +3,7 @@ layout: '@/layouts/LandingLayout.astro'
 title: FjellOverflow
 background: true
 logo: true
+showLatestPost: true
 ---
 
 Hei! I am [FjellOverflow](/about/), a full-stack web developer.
