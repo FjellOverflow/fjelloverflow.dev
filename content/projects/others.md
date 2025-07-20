@@ -4,6 +4,7 @@ previewImage: '../assets/projects/others.svg'
 tags:
   - ansible
   - linux
+  - devops
 ---
 
 Sometimes, I work on smaller, rather niche projects, such as:

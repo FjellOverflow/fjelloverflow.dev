@@ -6,6 +6,7 @@ tags:
   - docker
   - linux
   - ansible
+  - devops
 previewImage: '../assets/projects/fjellheimen.svg'
 ---
 
