@@ -32,7 +32,7 @@ You can check any other integers as well, and you will likely reach 1 with each 
 
 To test the Collatz Conjecture programmatically, you can write a straightforward script. Here is an example in Python:
 
-```python collatz.py
+```python title="collatz.py"
 n = 17
 steps = 0
 
@@ -54,7 +54,7 @@ All nice and easy so far, but what about doing the same in SQL? While loops are 
 
 *Enter Recursive Common Table Expressions (CTEs)*[^ctes]! Without going too deeply into the details, CTEs in SQL are temporary result sets that can be referenced within another SQL statement to simplify complex queries, avoid duplication, access hierarchical data, and keep code modular and clean. For the syntax, see this simple example:
 
-```sql my_cte.sql
+```sql title="my_cte.sql"
 WITH my_cte AS (
   SELECT a,b,c
   FROM table_A
@@ -71,7 +71,7 @@ The neat part of CTEs is their ability to reference themselves, making them an e
 
 Without further ado, I present the Collatz Conjecture implemented in SQLite, utilizing a recursive Common Table Expression (CTE):
 
-```sql collatz.sql
+```sql title="collatz.sql"
 WITH RECURSIVE collatz AS (
 	SELECT 17 AS n
 	UNION ALL
@@ -90,7 +90,7 @@ By calling this CTE, we generate all integers derived from the starting number d
 
 For those who find it helpful, here is the Python equivalent of the SQL query:
 
-```python collatz-recursive.py
+```python title="collatz-recursive.py"
 def collatz(n):
     if n == 1:
         return 0

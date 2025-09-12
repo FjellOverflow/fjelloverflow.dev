@@ -67,7 +67,7 @@ All in all, Conventional Commits, in combination with SemVer, nicely defines how
 
 The obvious answer is a *Changelog*, a file where we add a list of new changes after each new release. This can be a lot of repetitive work when done manually, but fortunately, we can automate this as well, provided we adhered to the Conventional Commits specification during development! Our commit history might look like this:
 
-```sh git log --oneline
+```sh title="git log --oneline"
 bb84b39 fix: rounding error in final sum calculation
 fab74b2 feat(invoices): add PDF export
 6e241ca chore: update dependencies
@@ -76,7 +76,7 @@ fab74b2 feat(invoices): add PDF export
 
 Our last release was `1.2.3`. We made three changes and are now ready to do a new relase. Regardless of the specific tool, most of them will generate a new changelog entry for us that will look somewhat like this:
 
-```md CHANGELOG.md
+```md title="CHANGELOG.md"
 ## 1.3.0 (2024-11-29)
 
 ### Features

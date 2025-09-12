@@ -20,7 +20,7 @@ import PreviewImage from '../assets/posts/update-docker-containers.jpg'
 
 Before considering details, let us establish the technical situation we are in. There is a (Linux-based) server on which we are hosting a few applications, for instance [nginx](https://nginx.org/en/). To keep things nice and separate, nginx is being run with the help of [Docker](https://www.docker.com/), so in its own isolated container on the host machine. Furthermore, so we don't have to remember and retype the commands of starting/stopping or recreating this _nginx_ container, we created a `docker-compose.yaml` file, containing the entire configuration, so we can always remove and recreate the container without losing data by using `docker compose up/down`.
 
-```yaml docker-compose.yaml
+```yaml title="docker-compose.yaml"
 services:
   nginx:
     image: lscr.io/linuxserver/nginx

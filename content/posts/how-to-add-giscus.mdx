@@ -54,7 +54,7 @@ After configuring the settings, _Giscus_ provides you with a generated `<script>
 
 You should now have a script tag that looks like this:
 
-```html
+```html title="index.html"
 <script
   src="https://giscus.app/client.js"
   data-repo="[ENTER REPO HERE]"
@@ -75,7 +75,7 @@ You should now have a script tag that looks like this:
 
 Simply add that to the source code of the site. For instance, if you're using [Nordlys](https://github.com/FjellOverflow/nordlys) (the theme of this website) and want to enable comments on posts, navigate to `src/layouts/PostLayout.astro` and paste it into the desired location where you want the comments to appear, perhaps underneath the `<Content>`.
 
-```diff src/layouts/PostLayout.astro
+```diff lang="html" title="src/layouts/PostLayout.astro" collapse={10-18}
     <article>
       <Content />
     </article>
@@ -85,7 +85,15 @@ Simply add that to the source code of the site. For instance, if you're using [N
 +     data-repo-id="[ENTER REPO ID HERE]"
 +     data-category="[ENTER CATEGORY NAME HERE]"
 +     data-category-id="[ENTER CATEGORY ID HERE]"
-+     ...
++     data-category-id="[ENTER CATEGORY ID HERE]"
++     data-mapping="pathname"
++     data-strict="0"
++     data-reactions-enabled="1"
++     data-emit-metadata="0"
++     data-input-position="bottom"
++     data-theme="preferred_color_scheme"
++     data-lang="en"
++     crossorigin="anonymous"
 +   </script>
 
   <AdjacentPostsBar {post} slot="bottom" />

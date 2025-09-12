@@ -26,7 +26,7 @@ Also note, that of the the moment of writing this, its only Chrome browser that 
 
 To offer the installation prompt to the user, you need to catch the event when it fires from the browser. Start by creating a file `pwaInstall.ts` and defining the `BeforeInstallPromptEvent`.
 
-```typescript pwaInstall.ts
+```typescript title="pwaInstall.ts"
 // define type for event
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: Array<string>
@@ -43,7 +43,20 @@ const pwaInstallPromptEvent = ref<BeforeInstallPromptEvent>()
 
 Next, we want to define the function that catches the event and stores it in the `ref`. Don't forget to export both the `function` and the `ref`.
 
-```typescript pwaInstall.ts
+```typescript title="pwaInstall.ts" collapse={1-9}
+// define type for event
+interface BeforeInstallPromptEvent extends Event {
+  readonly platforms: Array<string>
+  readonly userChoice: Promise<{
+    outcome: 'accepted' | 'dismissed'
+    platform: string
+  }>
+  prompt(): Promise<void>
+}
+
+// create ref to hold the event
+const pwaInstallPromptEvent = ref<BeforeInstallPromptEvent>()
+
 function checkIfInstallable() {
   window.addEventListener('beforeinstallprompt', (event) => {
 
@@ -60,7 +73,7 @@ export { checkIfInstallable, pwaInstallPromptEvent }
 
 Now we need to ensure that the function is executed at the entry point of our app. In Vue, that is the `main.ts` file. Simply import the function we wrote and call it.
 
-```typescript main.ts
+```typescript title="main.ts"
 import App from '@/App.vue'
 import { checkIfInstallable } from 'src/pwaInstall'
 
@@ -77,7 +90,7 @@ Having caught and stored the event, what's left is to show a button that invokes
 
 In your HTML (Vue component), you can now add this button
 
-```vue MyComponent.vue
+```vue title="MyComponent.vue"
 <script setup lang="ts">
 import { pwaInstallPromptEvent } from 'src/pwaInstall'
 </script>
