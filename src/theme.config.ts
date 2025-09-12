@@ -56,8 +56,5 @@ export default defineThemeConfig({
     typescript: 'tabler--brand-typescript',
     vue: 'tabler--brand-vue'
   },
-  shikiThemes: {
-    light: 'github-light',
-    dark: 'nord'
-  }
+  expressiveCodeThemes: ['github-light', 'nord']
 })
