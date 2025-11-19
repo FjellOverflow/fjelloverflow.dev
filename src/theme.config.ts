@@ -5,7 +5,9 @@ export default defineThemeConfig({
   title: 'FjellOverflow',
   description: 'Personal website and Blog.',
   author: 'FjellOverflow',
+  postsPerPage: 3,
   projectsPerPage: 10,
+  projectsView: 'grid',
   navbarItems: [
     { label: 'Blog', href: '/posts/' },
     { label: 'Projects', href: '/projects/' },
