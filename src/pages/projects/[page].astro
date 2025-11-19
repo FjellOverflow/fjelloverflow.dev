@@ -1,11 +1,12 @@
 ---
 import Pagination from '@/components/Pagination.astro'
-import ProjectsList from '@/components/ProjectsList.astro'
+import ProjectsGrid from '@/components/projects/ProjectsGrid.astro'
+import ProjectsList from '@/components/projects/ProjectsList.astro'
 import PageLayout, {
   type Props as PageLayoutProps
 } from '@/layouts/PageLayout.astro'
 import config from '@/theme.config'
-import { getProjects } from '@/util/projects'
+import { getProjects, getProjectsPageDescription } from '@/util/projects'
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -22,6 +23,8 @@ const frontmatter: PageLayoutProps['frontmatter'] = {
   title: 'Projects',
   activeHeaderLink: 'Projects'
 }
+
+const PageDescription = getProjectsPageDescription()
 ---
 
 <PageLayout {frontmatter}>
@@ -29,7 +32,11 @@ const frontmatter: PageLayoutProps['frontmatter'] = {
     {frontmatter.title}
     {page.currentPage > 1 && <span>{` (page ${page.currentPage})`}</span>}
   </h1>
-  <ProjectsList projects={page.data} />
+
+  {PageDescription && <PageDescription />}
+
+  {config.projectsView === 'list' && <ProjectsList projects={page.data} />}
+  {config.projectsView === 'grid' && <ProjectsGrid projects={page.data} />}
 
   <Pagination slot="bottom" page={page} />
 </PageLayout>

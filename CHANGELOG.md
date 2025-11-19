@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.2.0](https://github.com/FjellOverflow/nordlys/compare/v3.1.0...v3.2.0) (2025-11-18)
+
+
+### Features
+
+* add animated light/dark mode switching ([cbc3086](https://github.com/FjellOverflow/nordlys/commit/cbc3086ba69374b285b57d07523158526a818528))
+* animate site branding ([ff95310](https://github.com/FjellOverflow/nordlys/commit/ff95310e387f9134480ec513a080ad5e6cf751d2))
+* external markdown pageDescriptions for posts & projects pages ([f915d08](https://github.com/FjellOverflow/nordlys/commit/f915d087bcaf742aec77b8db4aa5ccbffaa46f6d))
+
+## [3.1.0](https://github.com/FjellOverflow/nordlys/compare/v3.0.1...v3.1.0) (2025-11-11)
+
+
+### Features
+
+* `FlipCard` component ([cfa3744](https://github.com/FjellOverflow/nordlys/commit/cfa37446c522822a56fa1f78f1864f4fff5ab695))
+* configure posts & projects to be shown as `list` or `grid` in `theme.config.ts` ([e8d4730](https://github.com/FjellOverflow/nordlys/commit/e8d47305beabb5f62f22788ed9401026bf80b769))
+* grid view for posts ([d39dfc2](https://github.com/FjellOverflow/nordlys/commit/d39dfc249aef4a941953a358da7ed4779bfabb76))
+* grid view for projects ([0ce3a9c](https://github.com/FjellOverflow/nordlys/commit/0ce3a9c37948f46cf3ff1b964d27699bcc51494f))
+
+
+### Bug Fixes
+
+* improve inline tags spacing ([2ff9888](https://github.com/FjellOverflow/nordlys/commit/2ff98887e08d4167b7a328613ce16073c1a8ea69))
+* improve tags spacing ([d7e24ee](https://github.com/FjellOverflow/nordlys/commit/d7e24ee9fffa8568afc7709df64a6dcef457d62b))
+* pipeline syntax ([e07a81a](https://github.com/FjellOverflow/nordlys/commit/e07a81a870c94a54df7b8accc08802c469493e13))
+* remove lower breakpoint margin from higher breakpoints ([fad3095](https://github.com/FjellOverflow/nordlys/commit/fad309574243af1f50b36d87e6936f372988bc7d))
+
+## [3.0.1](https://github.com/FjellOverflow/nordlys/compare/v3.0.0...v3.0.1) (2025-10-26)
+
+
+### Bug Fixes
+
+* image paths ([9e3a54a](https://github.com/FjellOverflow/nordlys/commit/9e3a54a3f6534194e8bccaa78f90cce51f14e884))
+
 ## [3.0.0](https://github.com/FjellOverflow/nordlys/compare/v2.5.0...v3.0.0) (2025-09-11)
 
 
