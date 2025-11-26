@@ -6,7 +6,7 @@ tags:
   - python
   - jupyter
   - sql
-previewImage: '../assets/projects/f1-analysis.svg'
+previewImage: '../assets/projects/f1-analysis.png'
 ---
 
 Exploratory Formula 1 data analysis and visualization.
