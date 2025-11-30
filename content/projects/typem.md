@@ -6,7 +6,7 @@ tags:
   - vue
   - typescript
   - tailwindcss
-previewImage: '../assets/projects/typem.svg'
+previewImage: '../assets/projects/typem.png'
 ---
 
 A time-based game challenging the player to type out a list of items, mostly geography-themed. Ready to test your skills?\
