@@ -16,17 +16,23 @@ const { gradient, background, logo: showLogo } = Astro.props.frontmatter
 <div class="w-fit">
   <div
     class:list={[
-      'text-accent relative mb-1 w-fit pb-2 font-bold tracking-tight sm:mb-2',
+      'text-accent relative mb-1 w-fit pb-2 text-4xl font-bold tracking-tight sm:mb-2 sm:text-7xl',
       {
         'from-accent via-accent/75 to-accent/50 bg-linear-to-r bg-clip-text text-transparent':
           gradient
       },
       {
         'mb-2 sm:mb-8': background
-      },
-      { 'text-4xl sm:text-7xl': showLogo, 'text-5xl sm:text-8xl': !showLogo }
+      }
     ]}
   >
+    {
+      background && (
+        <span
+          class:list={['bg-accent/75 absolute inset-0 h-full w-full blur-3xl']}
+        />
+      )
+    }
     <div class="flex items-center gap-4 sm:gap-8" transition:name="branding">
       {
         showLogo && (
@@ -42,15 +48,5 @@ const { gradient, background, logo: showLogo } = Astro.props.frontmatter
         <slot />
       </h1>
     </div>
-    {
-      background && (
-        <span
-          class:list={[
-            'bg-accent/75 absolute inset-0 h-full w-full blur-3xl',
-            { 'ml-12 sm:ml-20': showLogo }
-          ]}
-        />
-      )
-    }
   </div>
 </div>
