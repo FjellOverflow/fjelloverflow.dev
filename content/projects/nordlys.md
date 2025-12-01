@@ -6,7 +6,7 @@ tags:
   - astro
   - tailwindcss
   - typescript
-previewImage: '../assets/projects/nordlys.svg'
+previewImage: '../assets/projects/nordlys.png'
 ---
 
 A minimal Astro blog theme, ideal for a personal blog and showcasing a projects portfolio.
