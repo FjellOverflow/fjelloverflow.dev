@@ -7,7 +7,7 @@ tags:
   - linux
   - ansible
   - devops
-previewImage: '../assets/projects/fjellheimen.svg'
+previewImage: '../assets/projects/fjellheimen.png'
 ---
 
 Setup and configuration of a Linux-based home server for personal use.
