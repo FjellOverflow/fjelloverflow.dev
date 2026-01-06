@@ -29,14 +29,6 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [readingTimePlugin, sectionizePlugin]
   },
-  image: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'bookwyrm-social.sfo3.digitaloceanspaces.com'
-      }
-    ]
-  },
   vite: {
     plugins: [tailwindcss()]
   }

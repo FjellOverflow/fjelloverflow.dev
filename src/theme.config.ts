@@ -13,13 +13,7 @@ export default defineThemeConfig({
     { label: 'Projects', href: '/projects/' },
     { label: 'Tags', href: '/tags/' },
     { label: 'About', href: '/about/' },
-    {
-      label: 'Other',
-      children: [
-        { label: 'Photos', icon: 'tabler--photo', href: '/photos/' },
-        { label: 'Bookshelf', icon: 'tabler--book-2', href: '/bookshelf/' }
-      ]
-    }
+    { label: 'Photos', href: '/photos/' }
   ],
   footerItems: [
     {
@@ -31,11 +25,6 @@ export default defineThemeConfig({
       icon: 'tabler--camera',
       href: 'https://pixelfed.social/FjellOverflow',
       label: 'FjellOverflow on Pixelfed'
-    },
-    {
-      icon: 'tabler--books',
-      href: 'https://bookwyrm.social/user/FjellOverflow',
-      label: 'FjellOverflow on Bookwyrm'
     },
     {
       icon: 'tabler--rss',
