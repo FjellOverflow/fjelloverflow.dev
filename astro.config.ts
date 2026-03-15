@@ -29,6 +29,14 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [readingTimePlugin, sectionizePlugin]
   },
+  image: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'pxscdn.com'
+      }
+    ]
+  },
   vite: {
     plugins: [tailwindcss()]
   }
