@@ -36,6 +36,6 @@ export default defineConfig({
   },
 
   image: {
-    domains: ['images.pexels.com']
+    domains: ['pxscdn.com']
   }
 })
