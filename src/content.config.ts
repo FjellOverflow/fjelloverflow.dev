@@ -1,5 +1,5 @@
 import config from '@/theme.config'
-import { file, glob } from 'astro/loaders'
+import { glob } from 'astro/loaders'
 import { z } from 'astro/zod'
 import { defineCollection } from 'astro:content'
 
@@ -11,6 +11,7 @@ const posts = defineCollection({
       author: z.string().default(config.author),
       description: z.string(),
       publishedDate: z.date(),
+      updatedDate: z.date().optional(),
       draft: z.boolean().optional().default(false),
       canonicalURL: z.string().optional(),
       openGraphImage: image().optional(),
@@ -36,13 +37,27 @@ const projects = defineCollection({
     })
 })
 
-const photos = defineCollection({
-  loader: file('./content/photos.json'),
-  schema: z.object({
-    id: z.string(),
-    label: z.string(),
-    url: z.string()
-  })
+const albums = defineCollection({
+  loader: glob({
+    pattern: '**/[^_]*.json',
+    base: './content/albums',
+    generateId: ({ entry }) => entry.replace(/\.json$/, '')
+  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string().optional(),
+      previewImage: z.object({
+        src: image(),
+        description: z.string().optional()
+      }),
+      photos: z.array(
+        z.object({
+          src: image(),
+          description: z.string().optional()
+        })
+      )
+    })
 })
 
-export const collections = { posts, projects, photos }
+export const collections = { posts, projects, albums }

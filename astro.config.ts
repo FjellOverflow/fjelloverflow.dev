@@ -26,18 +26,16 @@ export default defineConfig({
     mdx(),
     sitemap()
   ],
+
   markdown: {
     remarkPlugins: [readingTimePlugin, sectionizePlugin]
   },
-  image: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'pxscdn.com'
-      }
-    ]
-  },
+
   vite: {
     plugins: [tailwindcss()]
+  },
+
+  image: {
+    domains: ['images.pexels.com']
   }
 })

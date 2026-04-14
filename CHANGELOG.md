@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.5.0](https://github.com/FjellOverflow/nordlys/compare/v3.4.3...v3.5.0) (2026-04-13)
+
+
+### Features
+
+* add `og:type` to pages ([afc5fb2](https://github.com/FjellOverflow/nordlys/commit/afc5fb201065388de6ca08d7611650102374643e))
+* add `updatedOn` prop to post frontmatter ([1ee60eb](https://github.com/FjellOverflow/nordlys/commit/1ee60eb9074cd2c05ebd0b2db875f81f45841b0f))
+* add captions to photoswipe ([b69aa3e](https://github.com/FjellOverflow/nordlys/commit/b69aa3ebef0775bee853172c630ebeadf9b689a8))
+* add example descriptions to content pages ([208c0b0](https://github.com/FjellOverflow/nordlys/commit/208c0b093b3a8e550d4ad445863e4ec2761098dc))
+* add new stock photo album ([6678961](https://github.com/FjellOverflow/nordlys/commit/667896158bf548af5f40e44e1e91f0ae0f1b007b))
+* albums page for photo gallery ([9d22181](https://github.com/FjellOverflow/nordlys/commit/9d22181b6e395fbc7264ec0341e08769591f5a0f))
+* image optimization & downscaling on generation ([947600f](https://github.com/FjellOverflow/nordlys/commit/947600f0164b40425676d09b46a85221084c91c4))
+* implement gallery feature with `photoswipe` ([9310e73](https://github.com/FjellOverflow/nordlys/commit/9310e73972267c4d3425a8fafe8c73d2bfa8cc55))
+* replace vanilla-zoom with photoswipe ([b34d158](https://github.com/FjellOverflow/nordlys/commit/b34d1585a8e2ec16182b713dee1c76ff2d91bd70))
+* start implementing photo gallery page ([d7d76b5](https://github.com/FjellOverflow/nordlys/commit/d7d76b54a32d339df94f42091a2cddc347830585))
+* start replacing vanilla-zoom with PhotoSwipe ([249e8e6](https://github.com/FjellOverflow/nordlys/commit/249e8e6afaf27198d3ece92b70db4a9b1476807d))
+
+
+### Bug Fixes
+
+* dont mutate `posts` prop in place ([da913c4](https://github.com/FjellOverflow/nordlys/commit/da913c45d6bc2e4dd7570a48af349590255e308f))
+* dont mutate `projects` prop in place ([1e17a88](https://github.com/FjellOverflow/nordlys/commit/1e17a8820a6f5feb89234e0cc16d9dc414fd700d))
+* lightbox captions on mobile ([081c178](https://github.com/FjellOverflow/nordlys/commit/081c178cea345f6ad17004411dd96b514424c712))
+* missing trailings slash at `canonicalUrl` ([740546a](https://github.com/FjellOverflow/nordlys/commit/740546ad3b7caab8d8bad02c66d9d05224bafa59))
+* properly handle font loading errors ([62dd7a6](https://github.com/FjellOverflow/nordlys/commit/62dd7a6a1132877ae8617a47c2affb3e6d8c1c09))
+* XSS vulnerability in pagefind search result rendering ([bb1bfc9](https://github.com/FjellOverflow/nordlys/commit/bb1bfc95e5e95a96380249ac360e4b12e063607a))
+
 ## [3.4.3](https://github.com/FjellOverflow/nordlys/compare/v3.4.2...v3.4.3) (2026-03-10)
 
 ## [3.4.2](https://github.com/FjellOverflow/nordlys/compare/v3.4.1...v3.4.2) (2026-03-10)
@@ -10,56 +37,65 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [3.4.0](https://github.com/FjellOverflow/nordlys/compare/v3.3.0...v3.4.0) (2025-12-21)
 
+
 ### Features
 
-- add background blur to about page logo ([9db92de](https://github.com/FjellOverflow/nordlys/commit/9db92de0df38c6db2578ba141364735e9fc0947c))
-- remove `gradient` hero option for landing page ([05ce62b](https://github.com/FjellOverflow/nordlys/commit/05ce62bea5f08e64671b8b4645baeb483b89626c))
+* add background blur to about page logo ([9db92de](https://github.com/FjellOverflow/nordlys/commit/9db92de0df38c6db2578ba141364735e9fc0947c))
+* remove `gradient` hero option for landing page ([05ce62b](https://github.com/FjellOverflow/nordlys/commit/05ce62bea5f08e64671b8b4645baeb483b89626c))
+
 
 ### Bug Fixes
 
-- adjust background blur on index page ([830d72f](https://github.com/FjellOverflow/nordlys/commit/830d72f76df21b777fa937a0a5b4a09e4ff4cdc4))
+* adjust background blur on index page ([830d72f](https://github.com/FjellOverflow/nordlys/commit/830d72f76df21b777fa937a0a5b4a09e4ff4cdc4))
 
 ## [3.3.0](https://github.com/FjellOverflow/nordlys/compare/v3.2.0...v3.3.0) (2025-11-25)
 
+
 ### Features
 
-- add new logo ([c6045d5](https://github.com/FjellOverflow/nordlys/commit/c6045d5e48769bdeb723ecfab40b4900b957c8bc))
+* add new logo ([c6045d5](https://github.com/FjellOverflow/nordlys/commit/c6045d5e48769bdeb723ecfab40b4900b957c8bc))
+
 
 ### Bug Fixes
 
-- small layout adjustment ([0b80db6](https://github.com/FjellOverflow/nordlys/commit/0b80db6d49807cdd1454e4832fadd706ae952096))
+* small layout adjustment ([0b80db6](https://github.com/FjellOverflow/nordlys/commit/0b80db6d49807cdd1454e4832fadd706ae952096))
 
 ## [3.2.0](https://github.com/FjellOverflow/nordlys/compare/v3.1.0...v3.2.0) (2025-11-18)
 
+
 ### Features
 
-- add animated light/dark mode switching ([cbc3086](https://github.com/FjellOverflow/nordlys/commit/cbc3086ba69374b285b57d07523158526a818528))
-- animate site branding ([ff95310](https://github.com/FjellOverflow/nordlys/commit/ff95310e387f9134480ec513a080ad5e6cf751d2))
-- external markdown pageDescriptions for posts & projects pages ([f915d08](https://github.com/FjellOverflow/nordlys/commit/f915d087bcaf742aec77b8db4aa5ccbffaa46f6d))
+* add animated light/dark mode switching ([cbc3086](https://github.com/FjellOverflow/nordlys/commit/cbc3086ba69374b285b57d07523158526a818528))
+* animate site branding ([ff95310](https://github.com/FjellOverflow/nordlys/commit/ff95310e387f9134480ec513a080ad5e6cf751d2))
+* external markdown pageDescriptions for posts & projects pages ([f915d08](https://github.com/FjellOverflow/nordlys/commit/f915d087bcaf742aec77b8db4aa5ccbffaa46f6d))
 
 ## [3.1.0](https://github.com/FjellOverflow/nordlys/compare/v3.0.1...v3.1.0) (2025-11-11)
 
+
 ### Features
 
-- `FlipCard` component ([cfa3744](https://github.com/FjellOverflow/nordlys/commit/cfa37446c522822a56fa1f78f1864f4fff5ab695))
-- configure posts & projects to be shown as `list` or `grid` in `theme.config.ts` ([e8d4730](https://github.com/FjellOverflow/nordlys/commit/e8d47305beabb5f62f22788ed9401026bf80b769))
-- grid view for posts ([d39dfc2](https://github.com/FjellOverflow/nordlys/commit/d39dfc249aef4a941953a358da7ed4779bfabb76))
-- grid view for projects ([0ce3a9c](https://github.com/FjellOverflow/nordlys/commit/0ce3a9c37948f46cf3ff1b964d27699bcc51494f))
+* `FlipCard` component ([cfa3744](https://github.com/FjellOverflow/nordlys/commit/cfa37446c522822a56fa1f78f1864f4fff5ab695))
+* configure posts & projects to be shown as `list` or `grid` in `theme.config.ts` ([e8d4730](https://github.com/FjellOverflow/nordlys/commit/e8d47305beabb5f62f22788ed9401026bf80b769))
+* grid view for posts ([d39dfc2](https://github.com/FjellOverflow/nordlys/commit/d39dfc249aef4a941953a358da7ed4779bfabb76))
+* grid view for projects ([0ce3a9c](https://github.com/FjellOverflow/nordlys/commit/0ce3a9c37948f46cf3ff1b964d27699bcc51494f))
+
 
 ### Bug Fixes
 
-- improve inline tags spacing ([2ff9888](https://github.com/FjellOverflow/nordlys/commit/2ff98887e08d4167b7a328613ce16073c1a8ea69))
-- improve tags spacing ([d7e24ee](https://github.com/FjellOverflow/nordlys/commit/d7e24ee9fffa8568afc7709df64a6dcef457d62b))
-- pipeline syntax ([e07a81a](https://github.com/FjellOverflow/nordlys/commit/e07a81a870c94a54df7b8accc08802c469493e13))
-- remove lower breakpoint margin from higher breakpoints ([fad3095](https://github.com/FjellOverflow/nordlys/commit/fad309574243af1f50b36d87e6936f372988bc7d))
+* improve inline tags spacing ([2ff9888](https://github.com/FjellOverflow/nordlys/commit/2ff98887e08d4167b7a328613ce16073c1a8ea69))
+* improve tags spacing ([d7e24ee](https://github.com/FjellOverflow/nordlys/commit/d7e24ee9fffa8568afc7709df64a6dcef457d62b))
+* pipeline syntax ([e07a81a](https://github.com/FjellOverflow/nordlys/commit/e07a81a870c94a54df7b8accc08802c469493e13))
+* remove lower breakpoint margin from higher breakpoints ([fad3095](https://github.com/FjellOverflow/nordlys/commit/fad309574243af1f50b36d87e6936f372988bc7d))
 
 ## [3.0.1](https://github.com/FjellOverflow/nordlys/compare/v3.0.0...v3.0.1) (2025-10-26)
 
+
 ### Bug Fixes
 
-- image paths ([9e3a54a](https://github.com/FjellOverflow/nordlys/commit/9e3a54a3f6534194e8bccaa78f90cce51f14e884))
+* image paths ([9e3a54a](https://github.com/FjellOverflow/nordlys/commit/9e3a54a3f6534194e8bccaa78f90cce51f14e884))
 
 ## [3.0.0](https://github.com/FjellOverflow/nordlys/compare/v2.5.0...v3.0.0) (2025-09-11)
+
 
 ### ⚠ BREAKING CHANGES
 
@@ -67,13 +103,11 @@ From this version on, Nordlys uses [Expressive Code](https://expressive-code.com
 
 ````md
 // old syntax (Nordlys < v3.0.0)
-
 ```javascript myScript.js
 const sortedArray = [3, 1, 2].toSorted()
 ```
 
 // new syntax (Nordlys >= v3.0.0)
-
 ```javascript title="myScript.js"
 const sortedArray = [3, 1, 2].toSorted()
 ```
@@ -83,22 +117,24 @@ Furthermore, this change adds many powerful new features to syntax highlighting 
 
 ### Features
 
-- add collapsibleSection and lineNumbers plugin for expressive-code ([de65075](https://github.com/FjellOverflow/nordlys/commit/de65075dc1824041abf6fe15a1b48370120ce540))
-- add expresive-code ([bfff9c1](https://github.com/FjellOverflow/nordlys/commit/bfff9c17fb7af7f015d3f9bff2254a00732d80a1))
-- codeBlock icons plugin for expressive-code blocks ([95b3700](https://github.com/FjellOverflow/nordlys/commit/95b370005397e9c424ae44cf98efd7ed86805bdd))
+* add collapsibleSection and lineNumbers plugin for expressive-code ([de65075](https://github.com/FjellOverflow/nordlys/commit/de65075dc1824041abf6fe15a1b48370120ce540))
+* add expresive-code ([bfff9c1](https://github.com/FjellOverflow/nordlys/commit/bfff9c17fb7af7f015d3f9bff2254a00732d80a1))
+* codeBlock icons plugin for expressive-code blocks ([95b3700](https://github.com/FjellOverflow/nordlys/commit/95b370005397e9c424ae44cf98efd7ed86805bdd))
 
 ## [2.5.0](https://github.com/FjellOverflow/nordlys/compare/v2.4.0...v2.5.0) (2025-07-23)
 
+
 ### Features
 
-- highlight active header in TOC ([5ad84e5](https://github.com/FjellOverflow/nordlys/commit/5ad84e532367335b5a7ba70b2209eb03415dc1c4))
+* highlight active header in TOC ([5ad84e5](https://github.com/FjellOverflow/nordlys/commit/5ad84e532367335b5a7ba70b2209eb03415dc1c4))
 
 ## [2.4.0](https://github.com/FjellOverflow/nordlys/compare/v2.3.2...v2.4.0) (2025-07-20)
 
+
 ### Features
 
-- improve appearance of links to adjacent blog posts ([b8baea8](https://github.com/FjellOverflow/nordlys/commit/b8baea869caa75a8ecac8300af423a1464e5b5dc))
-- option to show latest blog post on landing page ([01c2b40](https://github.com/FjellOverflow/nordlys/commit/01c2b40fafc29081f1fa48b34192e3c3054736aa))
+* improve appearance of links to adjacent blog posts ([b8baea8](https://github.com/FjellOverflow/nordlys/commit/b8baea869caa75a8ecac8300af423a1464e5b5dc))
+* option to show latest blog post on landing page ([01c2b40](https://github.com/FjellOverflow/nordlys/commit/01c2b40fafc29081f1fa48b34192e3c3054736aa))
 
 ## [2.3.2](https://github.com/FjellOverflow/nordlys/compare/v2.3.1...v2.3.2) (2025-05-04)
 
