@@ -39,7 +39,6 @@ export default defineThemeConfig({
     devops: 'tabler--device-imac-cog',
     docker: 'tabler--brand-docker',
     encryption: 'tabler--lock',
-    jupyter: 'tabler--notebook',
     linux: 'tabler--device-imac',
     privacy: 'tabler--spy',
     python: 'tabler--brand-python',
