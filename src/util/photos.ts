@@ -1,5 +1,6 @@
 import type { MarkdownInstance } from 'astro'
 import { getCollection } from 'astro:content'
+
 export async function getAlbums() {
   const albums = await getCollection('albums')
 
