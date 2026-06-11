@@ -22,6 +22,7 @@ KEEP_THEIRS=(
     "pnpm-lock.yaml"
     "CHANGELOG.md"
     "test"
+    "mise.toml"
 )
 
 # ignore when added from upstream
