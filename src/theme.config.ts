@@ -12,8 +12,14 @@ export default defineThemeConfig({
     { label: 'Blog', href: '/posts/' },
     { label: 'Projects', href: '/projects/' },
     { label: 'Tags', href: '/tags/' },
-    { label: 'About', href: '/about/' },
-    { label: 'Photos', href: '/photos/' }
+    {
+      label: 'More',
+      children: [
+        { label: 'Tools & skills', href: '/tools/' },
+        { label: 'Photos', href: '/photos/' }
+      ]
+    },
+    { label: 'About', href: '/about/' }
   ],
   footerItems: [
     {
@@ -22,9 +28,10 @@ export default defineThemeConfig({
       label: 'FjellOverflow on Github'
     },
     {
-      icon: 'tabler--camera',
-      href: 'https://pixelfed.social/FjellOverflow',
-      label: 'FjellOverflow on Pixelfed'
+      // @ts-expect-error simple-icons usually not meant for UI
+      icon: 'simple-icons--exercism',
+      href: 'https://exercism.org/profiles/FjellOverflow',
+      label: 'FjellOverflow on Exercism'
     },
     {
       icon: 'tabler--rss',
