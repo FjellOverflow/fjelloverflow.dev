@@ -50,7 +50,7 @@ export default defineThemeConfig({
     privacy: 'tabler--spy',
     python: 'tabler--brand-python',
     react: 'tabler--brand-react',
-    sql: 'tabler--database',
+    sqlite: 'tabler--database',
     tailwindcss: 'tabler--brand-tailwind',
     typescript: 'tabler--brand-typescript',
     vue: 'tabler--brand-vue'
