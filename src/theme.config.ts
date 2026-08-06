@@ -47,6 +47,7 @@ export default defineThemeConfig({
     docker: 'tabler--brand-docker',
     encryption: 'tabler--lock',
     linux: 'tabler--device-imac',
+    nixos: 'tabler--snowflake',
     privacy: 'tabler--spy',
     python: 'tabler--brand-python',
     react: 'tabler--brand-react',
